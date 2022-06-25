@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 
 class NavbarBotton extends StatelessWidget {
-  NavbarBotton({
+  const NavbarBotton({
     Key? key,
-    this.icon,
-    this.tittle,
+    required this.pathSvg,
+    required this.tittle,
     this.index,
     this.isIndex,
     this.onTap,
   }) : super(key: key);
 
-  final String? tittle;
-  final IconData? icon;
+  final String tittle;
+  final String pathSvg;
   final int? index;
   final int? isIndex;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return (tittle != null)
+    return (tittle != 'null')
         ? GestureDetector(
             onTap: onTap,
             child: SizedBox(
@@ -33,12 +34,12 @@ class NavbarBotton extends StatelessWidget {
                       color: (index == isIndex) ? oysterBay : null,
                       borderRadius: BorderRadius.circular(spacing2),
                     ),
-                    child: Icon(icon),
+                    child: SvgPicture.asset(pathSvg),
                   ),
                   sibonanoh,
                   (index == isIndex)
                       ? Text(
-                          tittle ?? '',
+                          tittle,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                             color: dark,

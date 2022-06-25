@@ -6,7 +6,7 @@ import 'package:repos/persentation/auth/components/form_field.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 import '../../../application/auth/sign_up_bloc/sign_up_bloc.dart';
 
-import '../../home/home_page.dart';
+import '../../home/main_home.dart';
 import '../components/baground.dart';
 import '../components/button_auth.dart';
 import '../components/logo_app.dart';

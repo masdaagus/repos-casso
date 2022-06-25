@@ -31,7 +31,7 @@ class SignInOrSignUp extends StatelessWidget {
                 : Navigator.pop(context);
           },
           child: Text(
-            isSign ? buttonSignIn : buttonSignUp,
+            isSign ? buttonSignUp : buttonSignIn,
             style: const TextStyle(
               color: black,
               fontWeight: FontWeight.w700,

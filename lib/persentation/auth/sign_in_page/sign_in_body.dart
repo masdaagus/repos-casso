@@ -8,7 +8,7 @@ import 'package:repos/domain/models/user_model.dart';
 import 'package:repos/persentation/auth/components/baground.dart';
 import 'package:repos/persentation/auth/components/button_auth.dart';
 import 'package:repos/persentation/core/constant/spacing.dart';
-import 'package:repos/persentation/home/home_page.dart';
+import 'package:repos/persentation/home/main_home.dart';
 
 import '../../../application/auth/sign_in_bloc/sign_in_bloc.dart';
 import '../components/form_field.dart';
@@ -42,9 +42,11 @@ class SignInBody extends StatelessWidget {
                 ),
                 (user) {
                   Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => HomePage(user: user)));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(user: user),
+                    ),
+                  );
                 },
               ),
             );

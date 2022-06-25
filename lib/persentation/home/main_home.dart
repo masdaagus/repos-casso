@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repos/domain/models/user_model.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 import 'package:repos/persentation/home/components/appbar_home.dart';
-
 import '../../application/home/home_bloc.dart';
 import '../../injection.dart';
-import 'home_body.dart';
+import '../order/order_page.dart';
 import 'nav_bar/float_button.dart';
 import 'nav_bar/navbar_button.dart';
+import 'pages/home/home_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -51,7 +51,16 @@ class _HomePageState extends State<HomePage> {
         // child: HomeBody(user: widget.user),
         child: widget.widgets()[_selectedIndex],
       ),
-      floatingActionButton: FloatButton(),
+      floatingActionButton: FloatButton(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const OrderPage(),
+            ),
+          );
+        },
+      ),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
       bottomNavigationBar: BottomAppBar(
@@ -65,9 +74,9 @@ class _HomePageState extends State<HomePage> {
               children: List.generate(
                 navbarData.length,
                 (index) => NavbarBotton(
-                  icon: navbarData[index]['icon'] as IconData,
+                  tittle: navbarData[index]['tittle'] as String,
+                  pathSvg: navbarData[index]['icon'] as String,
                   index: index,
-                  tittle: navbarData[index]['tittle'] as String?,
                   isIndex: _selectedIndex,
                   onTap: () {
                     setState(() {
@@ -85,22 +94,22 @@ class _HomePageState extends State<HomePage> {
 const navbarData = [
   {
     "tittle": 'Home',
-    "icon": Icons.home_outlined,
+    "icon": svgHome,
   },
   {
     "tittle": 'News',
-    "icon": Icons.newspaper_outlined,
+    "icon": svgAdd,
   },
   {
-    "tittle": null,
-    "icon": Icons.hourglass_empty,
+    "tittle": 'null',
+    "icon": '',
   },
   {
     "tittle": 'Notifications',
-    "icon": Icons.notifications_outlined,
+    "icon": svgNotification,
   },
   {
     "tittle": 'Settings',
-    "icon": Icons.settings_outlined,
+    "icon": svgSettings,
   },
 ];

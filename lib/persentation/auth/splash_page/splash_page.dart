@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repos/persentation/auth/sign_in_page/sign_page.dart';
-import 'package:repos/persentation/home/home_page.dart';
+import 'package:repos/persentation/home/main_home.dart';
 
 import '../../../application/auth/auth_bloc.dart';
 
