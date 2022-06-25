@@ -5,8 +5,8 @@ part 'table_model.g.dart';
 @freezed
 class TableModel with _$TableModel {
   const factory TableModel({
-    required String? guessName,
-    required int? tableNumber,
+    final String? guessName,
+    final int? tableNumber,
   }) = _TableModel;
   factory TableModel.fromJson(Map<String, dynamic> json) =>
       _$TableModelFromJson(json);

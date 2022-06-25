@@ -3,9 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repos/persentation/auth/components/form_field.dart';
+import 'package:repos/persentation/core/constant/constant.dart';
 import '../../../application/auth/sign_up_bloc/sign_up_bloc.dart';
-import '../../core/constant/app_colors.dart';
-import '../../core/constant/spacing.dart';
+
+import '../../home/home_page.dart';
 import '../components/baground.dart';
 import '../components/button_auth.dart';
 import '../components/logo_app.dart';
@@ -21,7 +22,33 @@ class SignUpBody extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: BagroundAuth(
-        child: BlocBuilder<SignUpBloc, SignUpState>(
+        child: BlocConsumer<SignUpBloc, SignUpState>(
+          listener: (context, state) {
+            state.signUpFailureOrSuccess.fold(
+              () {},
+              (either) => either.fold(
+                (fail) => fail.maybeMap(
+                  emailAlreadyInUse: (_) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Email sudah terdaftar")));
+                  },
+                  serverError: (_) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Server Error")));
+                  },
+                  orElse: () => null,
+                ),
+                (user) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(user: user),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
           builder: (context, state) {
             final _bloc = context.read<SignUpBloc>();
             return Form(
@@ -30,7 +57,7 @@ class SignUpBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const LogoApp(),
-                    sibo3,
+                    siboh3,
 
                     /// FORM EMAIL
                     CustomFormField(
@@ -39,7 +66,7 @@ class SignUpBody extends StatelessWidget {
                         _bloc.add(SignUpEvent.emailChanged(val));
                       },
                       validator: (val) {
-                        if (val!.isEmpty) {
+                        if (val!.isEmpty || val.contains('@casso')) {
                           return 'Invalid Email';
                         }
                         return state.emailAddress.value.fold(
@@ -116,19 +143,21 @@ class SignUpBody extends StatelessWidget {
                         );
                       },
                     ),
-                    sibo3,
-                    ButtonAuth(
-                      tittle: 'REGISTER',
-                      onTap: () {
-                        FocusManager.instance.primaryFocus?.unfocus();
-                        if (_key.currentState!.validate()) {
-                          log('VALIDATED');
-                          _bloc.add(const SignUpEvent.signUp());
-                          log('E GA');
-                        }
-                      },
-                    ),
-                    sibo3,
+                    siboh3,
+                    state.isLoading
+                        ? const CircularProgressIndicator()
+                        : ButtonAuth(
+                            tittle: 'REGISTER',
+                            onTap: () {
+                              FocusManager.instance.primaryFocus?.unfocus();
+                              if (_key.currentState!.validate()) {
+                                log('VALIDATED');
+                                _bloc.add(const SignUpEvent.signUp());
+                                log('E GA');
+                              }
+                            },
+                          ),
+                    siboh3,
                     const SignInOrSignUp(isSign: false),
                   ],
                 ));

@@ -12,10 +12,6 @@ _$_RestoModel _$$_RestoModelFromJson(Map<String, dynamic> json) =>
       expiredAt: json['expiredAt'] as String?,
       restoName: json['restoName'] as String?,
       restoTaxes: (json['restoTaxes'] as num?)?.toDouble(),
-      employes: (json['employes'] as List<dynamic>?)
-              ?.map((e) => UserModel.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
     );
 
 Map<String, dynamic> _$$_RestoModelToJson(_$_RestoModel instance) =>
@@ -24,5 +20,4 @@ Map<String, dynamic> _$$_RestoModelToJson(_$_RestoModel instance) =>
       'expiredAt': instance.expiredAt,
       'restoName': instance.restoName,
       'restoTaxes': instance.restoTaxes,
-      'employes': instance.employes,
     };

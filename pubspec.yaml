@@ -44,6 +44,8 @@ dependencies:
   injectable: ^1.5.3
   get_it: ^7.2.0
   dartz: ^0.10.1
+  shared_preferences: ^2.0.15
+  google_nav_bar: ^5.0.6
 
 dev_dependencies:
   flutter_test:
@@ -51,7 +53,7 @@ dev_dependencies:
 
   flutter_lints: ^1.0.0
   build_runner: ^2.1.10
-  freezed: ^2.0.3
+  freezed: ^2.0.3+1
   json_serializable: ^6.2.0
   injectable_generator: ^1.5.3
 

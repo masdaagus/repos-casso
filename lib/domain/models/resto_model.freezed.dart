@@ -24,7 +24,6 @@ mixin _$RestoModel {
   String? get expiredAt => throw _privateConstructorUsedError;
   String? get restoName => throw _privateConstructorUsedError;
   double? get restoTaxes => throw _privateConstructorUsedError;
-  List<UserModel>? get employes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,8 +40,7 @@ abstract class $RestoModelCopyWith<$Res> {
       {String? createAt,
       String? expiredAt,
       String? restoName,
-      double? restoTaxes,
-      List<UserModel>? employes});
+      double? restoTaxes});
 }
 
 /// @nodoc
@@ -59,7 +57,6 @@ class _$RestoModelCopyWithImpl<$Res> implements $RestoModelCopyWith<$Res> {
     Object? expiredAt = freezed,
     Object? restoName = freezed,
     Object? restoTaxes = freezed,
-    Object? employes = freezed,
   }) {
     return _then(_value.copyWith(
       createAt: createAt == freezed
@@ -78,10 +75,6 @@ class _$RestoModelCopyWithImpl<$Res> implements $RestoModelCopyWith<$Res> {
           ? _value.restoTaxes
           : restoTaxes // ignore: cast_nullable_to_non_nullable
               as double?,
-      employes: employes == freezed
-          ? _value.employes
-          : employes // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>?,
     ));
   }
 }
@@ -97,8 +90,7 @@ abstract class _$$_RestoModelCopyWith<$Res>
       {String? createAt,
       String? expiredAt,
       String? restoName,
-      double? restoTaxes,
-      List<UserModel>? employes});
+      double? restoTaxes});
 }
 
 /// @nodoc
@@ -117,7 +109,6 @@ class __$$_RestoModelCopyWithImpl<$Res> extends _$RestoModelCopyWithImpl<$Res>
     Object? expiredAt = freezed,
     Object? restoName = freezed,
     Object? restoTaxes = freezed,
-    Object? employes = freezed,
   }) {
     return _then(_$_RestoModel(
       createAt: createAt == freezed
@@ -136,10 +127,6 @@ class __$$_RestoModelCopyWithImpl<$Res> extends _$RestoModelCopyWithImpl<$Res>
           ? _value.restoTaxes
           : restoTaxes // ignore: cast_nullable_to_non_nullable
               as double?,
-      employes: employes == freezed
-          ? _value._employes
-          : employes // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>?,
     ));
   }
 }
@@ -148,12 +135,7 @@ class __$$_RestoModelCopyWithImpl<$Res> extends _$RestoModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RestoModel implements _RestoModel {
   const _$_RestoModel(
-      {this.createAt,
-      this.expiredAt,
-      this.restoName,
-      this.restoTaxes,
-      final List<UserModel>? employes = const []})
-      : _employes = employes;
+      {this.createAt, this.expiredAt, this.restoName, this.restoTaxes});
 
   factory _$_RestoModel.fromJson(Map<String, dynamic> json) =>
       _$$_RestoModelFromJson(json);
@@ -166,19 +148,10 @@ class _$_RestoModel implements _RestoModel {
   final String? restoName;
   @override
   final double? restoTaxes;
-  final List<UserModel>? _employes;
-  @override
-  @JsonKey()
-  List<UserModel>? get employes {
-    final value = _employes;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
 
   @override
   String toString() {
-    return 'RestoModel(createAt: $createAt, expiredAt: $expiredAt, restoName: $restoName, restoTaxes: $restoTaxes, employes: $employes)';
+    return 'RestoModel(createAt: $createAt, expiredAt: $expiredAt, restoName: $restoName, restoTaxes: $restoTaxes)';
   }
 
   @override
@@ -190,8 +163,7 @@ class _$_RestoModel implements _RestoModel {
             const DeepCollectionEquality().equals(other.expiredAt, expiredAt) &&
             const DeepCollectionEquality().equals(other.restoName, restoName) &&
             const DeepCollectionEquality()
-                .equals(other.restoTaxes, restoTaxes) &&
-            const DeepCollectionEquality().equals(other._employes, _employes));
+                .equals(other.restoTaxes, restoTaxes));
   }
 
   @JsonKey(ignore: true)
@@ -201,8 +173,7 @@ class _$_RestoModel implements _RestoModel {
       const DeepCollectionEquality().hash(createAt),
       const DeepCollectionEquality().hash(expiredAt),
       const DeepCollectionEquality().hash(restoName),
-      const DeepCollectionEquality().hash(restoTaxes),
-      const DeepCollectionEquality().hash(_employes));
+      const DeepCollectionEquality().hash(restoTaxes));
 
   @JsonKey(ignore: true)
   @override
@@ -220,8 +191,7 @@ abstract class _RestoModel implements RestoModel {
       {final String? createAt,
       final String? expiredAt,
       final String? restoName,
-      final double? restoTaxes,
-      final List<UserModel>? employes}) = _$_RestoModel;
+      final double? restoTaxes}) = _$_RestoModel;
 
   factory _RestoModel.fromJson(Map<String, dynamic> json) =
       _$_RestoModel.fromJson;
@@ -234,8 +204,6 @@ abstract class _RestoModel implements RestoModel {
   String? get restoName => throw _privateConstructorUsedError;
   @override
   double? get restoTaxes => throw _privateConstructorUsedError;
-  @override
-  List<UserModel>? get employes => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_RestoModelCopyWith<_$_RestoModel> get copyWith =>

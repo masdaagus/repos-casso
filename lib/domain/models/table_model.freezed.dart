@@ -104,7 +104,7 @@ class __$$_TableModelCopyWithImpl<$Res> extends _$TableModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TableModel implements _TableModel {
-  const _$_TableModel({required this.guessName, required this.tableNumber});
+  const _$_TableModel({this.guessName, this.tableNumber});
 
   factory _$_TableModel.fromJson(Map<String, dynamic> json) =>
       _$$_TableModelFromJson(json);
@@ -148,9 +148,8 @@ class _$_TableModel implements _TableModel {
 }
 
 abstract class _TableModel implements TableModel {
-  const factory _TableModel(
-      {required final String? guessName,
-      required final int? tableNumber}) = _$_TableModel;
+  const factory _TableModel({final String? guessName, final int? tableNumber}) =
+      _$_TableModel;
 
   factory _TableModel.fromJson(Map<String, dynamic> json) =
       _$_TableModel.fromJson;

@@ -40,11 +40,11 @@ class SignInBody extends StatelessWidget {
                   },
                   orElse: () => null,
                 ),
-                (r) {
-                  Navigator.push(
+                (user) {
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomePage()));
+                          builder: (context) => HomePage(user: user)));
                 },
               ),
             );
@@ -57,7 +57,7 @@ class SignInBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const LogoApp(),
-                  sibo4,
+                  siboh4,
 
                   // FORM EMAIL
                   CustomFormField(
@@ -104,35 +104,12 @@ class SignInBody extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: TextButton(
-                        onPressed: () {
-                          List<UserModel> users = const [
-                            UserModel(
-                              email: 'tes_email',
-                              name: 'masda',
-                              password: '1234',
-                              restoID: 'resto id',
-                              status: 'lajang',
-                              uid: 'uid',
-                            ),
-                            UserModel(
-                              email: 'tes_email 2',
-                              name: 'masda 2',
-                              password: '1234 2',
-                              restoID: 'resto 2 id',
-                              status: 'lajang 2',
-                              uid: 'uid 2',
-                            ),
-                          ];
-                          var x = RestoModel(
-                              createAt: 'jasbdjbsad', employes: users);
-                          log(x.toJson().toString());
-                          log(users[0].toJson().toString());
-                        },
+                        onPressed: () {},
                         child: const Text("Lupa Password ?"),
                       ),
                     ),
                   ),
-                  sibo2,
+                  siboh2,
                   // BUTTON LOGIN
                   state.isLoading
                       ? const CircularProgressIndicator()
@@ -144,7 +121,7 @@ class SignInBody extends StatelessWidget {
                             }
                           },
                         ),
-                  sibo3,
+                  siboh3,
 
                   // SIGN IN OR SIGN UP
                   const SignInOrSignUp(),

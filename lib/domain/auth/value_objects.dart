@@ -12,7 +12,7 @@ class EmailAddress extends ValueObject<String> {
 
   factory EmailAddress(String input) {
     return EmailAddress._(
-      validateEmailAddress(input),
+      validateEmailAddress(input.trim()),
     );
   }
 
@@ -25,7 +25,7 @@ class Password extends ValueObject<String> {
 
   factory Password(String input) {
     return Password._(
-      validatePassword(input),
+      validatePassword(input.trim()),
     );
   }
 
@@ -38,7 +38,7 @@ class RestoFields extends ValueObject<String> {
 
   factory RestoFields(String input) {
     return RestoFields._(
-      validateRestoFields(input),
+      validateRestoFields(input.trim()),
     );
   }
 
@@ -51,7 +51,7 @@ class RestoTable extends ValueObject<String> {
 
   factory RestoTable(String input) {
     return RestoTable._(
-      validateRestoTable(input),
+      validateRestoTable(input.trim()),
     );
   }
 
