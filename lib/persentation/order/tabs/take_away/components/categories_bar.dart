@@ -21,7 +21,7 @@ class CategoriesBar extends StatelessWidget {
             height: 32,
             padding: const EdgeInsets.symmetric(horizontal: spacing),
             decoration: BoxDecoration(
-              color: frenPass,
+              color: oysterBay,
               borderRadius: BorderRadius.circular(spacing),
             ),
             child: const Center(

@@ -15,9 +15,10 @@ class CardTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.all(spacing),
       decoration: BoxDecoration(
-        color: frenPass,
-        borderRadius: BorderRadius.circular(spacing1),
+        color: lightColor,
+        borderRadius: BorderRadius.circular(spacing4),
       ),
       child: Stack(
         alignment: Alignment.center,
@@ -27,19 +28,23 @@ class CardTable extends StatelessWidget {
             children: [
               const Icon(
                 Icons.table_bar_outlined,
-                size: spacing3 + spacing1,
+                size: spacing3 + spacing,
+                color: textColor,
               ),
               sibonanoh,
-              Text(
-                guessName ?? '',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: dark,
-                  fontWeight: FontWeight.w500,
-                ),
-              )
+              (guessName != null)
+                  ? Text(
+                      // guessName ?? '',
+                      guessName!,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: textColor,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )
+                  : const SizedBox()
             ],
           ),
           Positioned(
@@ -49,7 +54,7 @@ class CardTable extends StatelessWidget {
             width: 32,
             child: Container(
               decoration: BoxDecoration(
-                color: hippBlue,
+                color: textColor.withOpacity(.8),
                 borderRadius: BorderRadius.circular(spacing2),
               ),
               child: Center(

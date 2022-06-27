@@ -1,12 +1,9 @@
-import 'dart:developer';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:repos/domain/models/resto_model.dart';
-import 'package:repos/domain/models/user_model.dart';
+
 import 'package:repos/persentation/auth/components/baground.dart';
 import 'package:repos/persentation/auth/components/button_auth.dart';
+import 'package:repos/persentation/core/constant/constant.dart';
 import 'package:repos/persentation/core/constant/spacing.dart';
 import 'package:repos/persentation/home/main_home.dart';
 
@@ -107,7 +104,9 @@ class SignInBody extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8),
                       child: TextButton(
                         onPressed: () {},
-                        child: const Text("Lupa Password ?"),
+                        child: const Text(
+                          "Lupa Password ?",
+                        ),
                       ),
                     ),
                   ),

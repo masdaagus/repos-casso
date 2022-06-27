@@ -15,27 +15,21 @@ class ProdctFloatButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          padding: const EdgeInsets.all(spacing1),
-          height: spacing4,
-          width: spacing4,
-          decoration: BoxDecoration(
-              color: frenPass,
-              borderRadius: BorderRadius.circular(spacing3),
-              boxShadow: const [
-                BoxShadow(
-                  blurRadius: 2,
-                  color: coral,
-                )
-              ]),
-          child: SvgPicture.asset(
-            svgAdd,
-          )
-          // child: const Icon(
-          //   Icons.add_shopping_cart_outlined,
-          //   color: dark,
-          //   size: spacing3,
-          // ),
-          ),
+        padding: const EdgeInsets.all(spacing1),
+        height: spacing4,
+        width: spacing4,
+        decoration: BoxDecoration(
+          color: lightColor,
+          borderRadius: BorderRadius.circular(spacing3),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 2,
+              color: dark,
+            )
+          ],
+        ),
+        child: SvgPicture.asset(svgAdd),
+      ),
     );
   }
 }

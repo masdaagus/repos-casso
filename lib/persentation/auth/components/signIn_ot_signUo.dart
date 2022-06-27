@@ -21,7 +21,19 @@ class SignInOrSignUp extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        isSign ? Text(signIn) : Text(signUp),
+        isSign
+            ? Text(
+                signIn,
+                style: TextStyle(
+                  color: textColor.withOpacity(.8),
+                ),
+              )
+            : Text(
+                signUp,
+                style: TextStyle(
+                  color: textColor.withOpacity(.8),
+                ),
+              ),
         const SizedBox(width: 4),
         GestureDetector(
           onTap: () {
@@ -33,7 +45,7 @@ class SignInOrSignUp extends StatelessWidget {
           child: Text(
             isSign ? buttonSignUp : buttonSignIn,
             style: const TextStyle(
-              color: black,
+              color: dark,
               fontWeight: FontWeight.w700,
             ),
           ),

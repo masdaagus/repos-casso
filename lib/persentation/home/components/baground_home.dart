@@ -13,32 +13,14 @@ class BagroundHome extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [frenPass, white],
+          colors: [lightColor, lightColor],
+          // colors: [Color(0XFF555b6e), Color(0XFF555b6e)],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
       ),
       child: SafeArea(
         child: child,
-        // child: Container(
-        //   margin: const EdgeInsets.symmetric(
-        //     horizontal: spacing2,
-        //     vertical: spacing4,
-        //   ),
-        //   padding: const EdgeInsets.symmetric(vertical: spacing3),
-        //   decoration: BoxDecoration(
-        //     borderRadius: BorderRadius.circular(spacing2),
-        //     color: white,
-        //     boxShadow: [
-        //       BoxShadow(
-        //         blurRadius: 4,
-        //         color: cGrey.withOpacity(.4),
-        //         offset: const Offset(4, 4),
-        //       )
-        //     ],
-        //   ),
-        //   child: child,
-        // ),
       ),
     );
   }

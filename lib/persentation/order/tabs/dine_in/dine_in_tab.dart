@@ -15,7 +15,7 @@ class DineInTab extends StatelessWidget {
     return Column(
       children: [
         const CustomSearchBar(),
-        siboh1,
+        siboh,
         Expanded(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: spacing1),
@@ -30,7 +30,7 @@ class DineInTab extends StatelessWidget {
                 33,
                 (index) => CardTable(
                   tableNumber: index + 1,
-                  guessName: 'MASDA',
+                  // guessName: 'MASDA',
                 ),
               ).toList(),
             ),

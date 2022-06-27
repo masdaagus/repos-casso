@@ -17,17 +17,17 @@ class FloatButton extends StatelessWidget {
         height: spacing4,
         width: spacing4,
         decoration: BoxDecoration(
-            color: frenPass,
+            color: lightColor,
             borderRadius: BorderRadius.circular(spacing3),
             boxShadow: const [
               BoxShadow(
                 blurRadius: 2,
-                color: coral,
+                color: textColor,
               )
             ]),
         child: const Icon(
           Icons.add_shopping_cart_outlined,
-          color: dark,
+          color: textColor,
           size: spacing3,
         ),
       ),

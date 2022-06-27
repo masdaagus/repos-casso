@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:repos/persentation/order/components/appbar_order.dart';
 import 'dart:developer';
 
+import '../core/components/custom_appbar.dart';
 import 'components/tabbar.dart';
 import 'components/tabbar_view.dart';
 
@@ -14,7 +15,7 @@ class OrderPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: OrderAppBar(appBar: AppBar()),
+        appBar: CustomAppBar(appBar: AppBar(), tittle: 'ORDER'),
         body: GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Column(

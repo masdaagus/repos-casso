@@ -31,7 +31,7 @@ class NavbarBotton extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(spacing - 2),
                     decoration: BoxDecoration(
-                      color: (index == isIndex) ? oysterBay : null,
+                      color: (index == isIndex) ? lightColor : null,
                       borderRadius: BorderRadius.circular(spacing2),
                     ),
                     child: SvgPicture.asset(pathSvg),

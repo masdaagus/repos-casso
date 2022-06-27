@@ -16,7 +16,7 @@ class OrderAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       centerTitle: true,
-      backgroundColor: frenPass,
+      backgroundColor: oysterBay,
       title: const Text(
         'ORDER',
         style: TextStyle(

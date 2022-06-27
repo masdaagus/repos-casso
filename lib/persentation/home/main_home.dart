@@ -48,7 +48,6 @@ class _HomePageState extends State<HomePage> {
       appBar: HomeAppBar(appBar: AppBar(), user: widget.user),
       body: BlocProvider(
         create: (context) => getIt<HomeBloc>(),
-        // child: HomeBody(user: widget.user),
         child: widget.widgets()[_selectedIndex],
       ),
       floatingActionButton: FloatButton(

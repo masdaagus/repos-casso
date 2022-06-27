@@ -25,7 +25,6 @@ class TakeAwayTab extends StatelessWidget {
         Column(
           children: [
             const CustomSearchBar(),
-            sibonanoh,
             Expanded(
               child: SingleChildScrollView(
                 physics: bouncing,
@@ -48,7 +47,7 @@ class TakeAwayTab extends StatelessWidget {
                         ).toList(),
                       ),
                     ),
-                    siboh3,
+                    siboh4,
                   ],
                 ),
               ),

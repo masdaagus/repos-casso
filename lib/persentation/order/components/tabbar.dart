@@ -11,18 +11,18 @@ class ExtractedTabbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      color: frenPass,
+      color: lightColor,
       child: Container(
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
-          color: oysterBay,
+          color: white,
           borderRadius: BorderRadius.circular(8),
         ),
         child: TabBar(
           physics: bouncing,
           indicator: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: frenPass,
+            color: lightColor,
           ),
           tabs: const [
             TabBarItem(),

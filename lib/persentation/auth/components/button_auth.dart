@@ -23,13 +23,13 @@ class ButtonAuth extends StatelessWidget {
           vertical: 16,
         ),
         decoration: BoxDecoration(
-          color: hippBlue,
-          borderRadius: BorderRadius.circular(spacing2),
+          color: oysterBay,
+          borderRadius: BorderRadius.circular(spacing3),
         ),
         child: Text(
           tittle ?? 'LOGIN',
           style: const TextStyle(
-            color: white,
+            color: textColor,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 1,

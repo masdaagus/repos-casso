@@ -18,7 +18,7 @@ class BagroundAuth extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [frenPass, white],
+          colors: [lightColor, white],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),

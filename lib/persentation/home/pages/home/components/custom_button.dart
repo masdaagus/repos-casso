@@ -23,7 +23,7 @@ class HomeButton extends StatelessWidget {
             height: 64,
             width: 64,
             decoration: BoxDecoration(
-              color: oysterBay,
+              color: lightColor,
               borderRadius: BorderRadius.circular(spacing4),
               boxShadow: const [
                 BoxShadow(
@@ -52,7 +52,7 @@ class HomeButton extends StatelessWidget {
               horizontal: spacing,
             ),
             decoration: BoxDecoration(
-              color: oysterBay,
+              color: lightColor,
               borderRadius: BorderRadius.circular(spacing4),
               boxShadow: const [
                 BoxShadow(
