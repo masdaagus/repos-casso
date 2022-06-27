@@ -30,7 +30,7 @@ class DineInTab extends StatelessWidget {
                 33,
                 (index) => CardTable(
                   tableNumber: index + 1,
-                  // guessName: 'MASDA',
+                  guessName: 'MASDA AGUS',
                 ),
               ).toList(),
             ),

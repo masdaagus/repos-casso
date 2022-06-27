@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repos/persentation/auth/components/form_field.dart';
@@ -7,6 +8,7 @@ import 'package:repos/persentation/core/constant/constant.dart';
 import '../../../application/auth/sign_up_bloc/sign_up_bloc.dart';
 
 import '../../home/main_home.dart';
+import '../../routes/app_router.dart';
 import '../components/baground.dart';
 import '../components/button_auth.dart';
 import '../components/logo_app.dart';
@@ -39,12 +41,7 @@ class SignUpBody extends StatelessWidget {
                   orElse: () => null,
                 ),
                 (user) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(user: user),
-                    ),
-                  );
+                  context.router.replace(HomeRoute(user: user));
                 },
               ),
             );

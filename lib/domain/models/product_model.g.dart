@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'product_model.dart';
 
 // **************************************************************************
@@ -15,6 +13,8 @@ _$_ProductModel _$$_ProductModelFromJson(Map<String, dynamic> json) =>
       productCategory: json['productCategory'] as String?,
       productImage: json['productImage'] as String?,
       productDescription: json['productDescription'] as String?,
+      productNote: json['productNote'] as String?,
+      productQty: json['productQty'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_ProductModelToJson(_$_ProductModel instance) =>
@@ -24,4 +24,6 @@ Map<String, dynamic> _$$_ProductModelToJson(_$_ProductModel instance) =>
       'productCategory': instance.productCategory,
       'productImage': instance.productImage,
       'productDescription': instance.productDescription,
+      'productNote': instance.productNote,
+      'productQty': instance.productQty,
     };

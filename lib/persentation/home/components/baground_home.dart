@@ -14,7 +14,7 @@ class BagroundHome extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [lightColor, lightColor],
-          // colors: [Color(0XFF555b6e), Color(0XFF555b6e)],
+          // colors: [Color(0XFFfaf9f9), Color(0XFFfaf9f9)],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),

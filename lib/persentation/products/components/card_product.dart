@@ -13,7 +13,7 @@ class CardProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: lightColor,
+        // color: frenPass,
         borderRadius: BorderRadius.circular(spacing),
       ),
       child: Stack(
@@ -39,16 +39,19 @@ class CardProductImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(spacing),
-      child: (image != null)
-          ? Image.asset(
-              image!,
-              height: double.infinity,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            )
-          : siboh,
+    return Padding(
+      padding: const EdgeInsets.all(spacing),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(spacing),
+        child: (image != null)
+            ? Image.asset(
+                image!,
+                height: double.infinity,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              )
+            : siboh,
+      ),
     );
   }
 }
@@ -64,42 +67,47 @@ class CardProductInfo extends StatelessWidget {
       bottom: 0,
       right: 0,
       left: 0,
-      child: ClipRRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(
-            sigmaX: spacing3,
-            sigmaY: spacing3,
-          ),
-          child: Container(
-            height: 56,
-            padding: const EdgeInsets.symmetric(
-              horizontal: spacing / 2,
-              vertical: 2,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: spacing),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(spacing),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: spacing2,
+              sigmaY: spacing2,
             ),
-            color: white.withOpacity(.4),
-            child: SizedBox(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Milkshake Strowberry",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: dark,
-                      fontWeight: FontWeight.w800,
+            child: Container(
+              // height: 56,
+
+              padding: const EdgeInsets.symmetric(
+                horizontal: spacing,
+                vertical: spacing,
+              ),
+              color: white.withOpacity(.6),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Milkshake Strowberry",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: dark,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
-                  ),
-                  sibonanoh,
-                  Text(
-                    "Rp23.000",
-                    style: TextStyle(
-                        fontSize: 12,
-                        color: dark.withOpacity(.8),
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
+                    sibonanoh,
+                    Text(
+                      "Rp23.000",
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: dark.withOpacity(.8),
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

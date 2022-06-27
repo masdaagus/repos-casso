@@ -10,6 +10,8 @@ class ProductModel with _$ProductModel {
     final String? productCategory,
     final String? productImage,
     final String? productDescription,
+    final String? productNote,
+    @Default(0) int productQty,
   }) = _ProductModel;
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
       _$ProductModelFromJson(json);

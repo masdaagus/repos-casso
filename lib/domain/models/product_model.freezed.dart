@@ -25,6 +25,8 @@ mixin _$ProductModel {
   String? get productCategory => throw _privateConstructorUsedError;
   String? get productImage => throw _privateConstructorUsedError;
   String? get productDescription => throw _privateConstructorUsedError;
+  String? get productNote => throw _privateConstructorUsedError;
+  int get productQty => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +44,9 @@ abstract class $ProductModelCopyWith<$Res> {
       double? productPrice,
       String? productCategory,
       String? productImage,
-      String? productDescription});
+      String? productDescription,
+      String? productNote,
+      int productQty});
 }
 
 /// @nodoc
@@ -60,6 +64,8 @@ class _$ProductModelCopyWithImpl<$Res> implements $ProductModelCopyWith<$Res> {
     Object? productCategory = freezed,
     Object? productImage = freezed,
     Object? productDescription = freezed,
+    Object? productNote = freezed,
+    Object? productQty = freezed,
   }) {
     return _then(_value.copyWith(
       productName: productName == freezed
@@ -82,6 +88,14 @@ class _$ProductModelCopyWithImpl<$Res> implements $ProductModelCopyWith<$Res> {
           ? _value.productDescription
           : productDescription // ignore: cast_nullable_to_non_nullable
               as String?,
+      productNote: productNote == freezed
+          ? _value.productNote
+          : productNote // ignore: cast_nullable_to_non_nullable
+              as String?,
+      productQty: productQty == freezed
+          ? _value.productQty
+          : productQty // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -98,7 +112,9 @@ abstract class _$$_ProductModelCopyWith<$Res>
       double? productPrice,
       String? productCategory,
       String? productImage,
-      String? productDescription});
+      String? productDescription,
+      String? productNote,
+      int productQty});
 }
 
 /// @nodoc
@@ -119,6 +135,8 @@ class __$$_ProductModelCopyWithImpl<$Res>
     Object? productCategory = freezed,
     Object? productImage = freezed,
     Object? productDescription = freezed,
+    Object? productNote = freezed,
+    Object? productQty = freezed,
   }) {
     return _then(_$_ProductModel(
       productName: productName == freezed
@@ -141,6 +159,14 @@ class __$$_ProductModelCopyWithImpl<$Res>
           ? _value.productDescription
           : productDescription // ignore: cast_nullable_to_non_nullable
               as String?,
+      productNote: productNote == freezed
+          ? _value.productNote
+          : productNote // ignore: cast_nullable_to_non_nullable
+              as String?,
+      productQty: productQty == freezed
+          ? _value.productQty
+          : productQty // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -153,7 +179,9 @@ class _$_ProductModel implements _ProductModel {
       this.productPrice,
       this.productCategory,
       this.productImage,
-      this.productDescription});
+      this.productDescription,
+      this.productNote,
+      this.productQty = 0});
 
   factory _$_ProductModel.fromJson(Map<String, dynamic> json) =>
       _$$_ProductModelFromJson(json);
@@ -168,10 +196,15 @@ class _$_ProductModel implements _ProductModel {
   final String? productImage;
   @override
   final String? productDescription;
+  @override
+  final String? productNote;
+  @override
+  @JsonKey()
+  final int productQty;
 
   @override
   String toString() {
-    return 'ProductModel(productName: $productName, productPrice: $productPrice, productCategory: $productCategory, productImage: $productImage, productDescription: $productDescription)';
+    return 'ProductModel(productName: $productName, productPrice: $productPrice, productCategory: $productCategory, productImage: $productImage, productDescription: $productDescription, productNote: $productNote, productQty: $productQty)';
   }
 
   @override
@@ -188,7 +221,11 @@ class _$_ProductModel implements _ProductModel {
             const DeepCollectionEquality()
                 .equals(other.productImage, productImage) &&
             const DeepCollectionEquality()
-                .equals(other.productDescription, productDescription));
+                .equals(other.productDescription, productDescription) &&
+            const DeepCollectionEquality()
+                .equals(other.productNote, productNote) &&
+            const DeepCollectionEquality()
+                .equals(other.productQty, productQty));
   }
 
   @JsonKey(ignore: true)
@@ -199,7 +236,9 @@ class _$_ProductModel implements _ProductModel {
       const DeepCollectionEquality().hash(productPrice),
       const DeepCollectionEquality().hash(productCategory),
       const DeepCollectionEquality().hash(productImage),
-      const DeepCollectionEquality().hash(productDescription));
+      const DeepCollectionEquality().hash(productDescription),
+      const DeepCollectionEquality().hash(productNote),
+      const DeepCollectionEquality().hash(productQty));
 
   @JsonKey(ignore: true)
   @override
@@ -218,7 +257,9 @@ abstract class _ProductModel implements ProductModel {
       final double? productPrice,
       final String? productCategory,
       final String? productImage,
-      final String? productDescription}) = _$_ProductModel;
+      final String? productDescription,
+      final String? productNote,
+      final int productQty}) = _$_ProductModel;
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
       _$_ProductModel.fromJson;
@@ -233,6 +274,10 @@ abstract class _ProductModel implements ProductModel {
   String? get productImage => throw _privateConstructorUsedError;
   @override
   String? get productDescription => throw _privateConstructorUsedError;
+  @override
+  String? get productNote => throw _privateConstructorUsedError;
+  @override
+  int get productQty => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductModelCopyWith<_$_ProductModel> get copyWith =>

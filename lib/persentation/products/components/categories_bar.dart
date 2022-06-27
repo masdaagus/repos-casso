@@ -9,11 +9,9 @@ class CategoriesBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: spacing),
-      padding: const EdgeInsets.symmetric(
-        horizontal: spacing1,
-        vertical: spacing / 2,
-      ),
+      margin: const EdgeInsets.only(top: spacing, bottom: spacing),
+      padding: const EdgeInsets.symmetric(horizontal: spacing),
+      height: 48,
       color: white,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,12 +21,12 @@ class CategoriesBar extends StatelessWidget {
             height: 32,
             padding: const EdgeInsets.symmetric(horizontal: spacing),
             decoration: BoxDecoration(
-              color: oysterBay,
+              // color: oysterBay,
               borderRadius: BorderRadius.circular(spacing),
             ),
             child: const Center(
               child: Text(
-                "CATEGORIES",
+                "CATEGORIES : ",
                 style: TextStyle(
                   color: dark,
                   fontWeight: FontWeight.bold,
@@ -43,10 +41,18 @@ class CategoriesBar extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [
+                children: const [
                   ChoiceChip(
-                    label: Text("ALL"),
+                    label: Text(
+                      "ALL",
+                      style: TextStyle(
+                        color: dark,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     selected: true,
+                    backgroundColor: dark,
+                    selectedColor: frenPass,
                   ),
                   sibow2,
                   ChoiceChip(label: Text("FOOD"), selected: false),

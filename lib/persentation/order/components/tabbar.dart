@@ -22,7 +22,7 @@ class ExtractedTabbar extends StatelessWidget {
           physics: bouncing,
           indicator: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: lightColor,
+            color: oysterBay,
           ),
           tabs: const [
             TabBarItem(),

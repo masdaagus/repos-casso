@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +9,7 @@ import 'package:repos/persentation/core/constant/spacing.dart';
 import 'package:repos/persentation/home/main_home.dart';
 
 import '../../../application/auth/sign_in_bloc/sign_in_bloc.dart';
+import '../../routes/app_router.dart';
 import '../components/form_field.dart';
 import '../components/logo_app.dart';
 import '../components/signIn_ot_signUo.dart';
@@ -38,12 +40,7 @@ class SignInBody extends StatelessWidget {
                   orElse: () => null,
                 ),
                 (user) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(user: user),
-                    ),
-                  );
+                  context.router.replace(HomeRoute(user: user));
                 },
               ),
             );

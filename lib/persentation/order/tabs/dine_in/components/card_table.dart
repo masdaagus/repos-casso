@@ -17,9 +17,15 @@ class CardTable extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(spacing),
       decoration: BoxDecoration(
-        color: lightColor,
-        borderRadius: BorderRadius.circular(spacing4),
-      ),
+          color: guessName != null ? oysterBay : white,
+          borderRadius: BorderRadius.circular(spacing4),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4,
+              color: cGrey.withOpacity(.6),
+              offset: const Offset(2, 2),
+            )
+          ]),
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -41,6 +47,7 @@ class CardTable extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: textColor,
+                        fontSize: 10,
                         fontWeight: FontWeight.w500,
                       ),
                     )

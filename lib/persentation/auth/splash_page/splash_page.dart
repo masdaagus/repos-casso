@@ -1,10 +1,9 @@
 // import 'dart:developer';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:repos/persentation/auth/sign_in_page/sign_page.dart';
-import 'package:repos/persentation/home/main_home.dart';
-
+import 'package:repos/persentation/routes/app_router.dart';
 import '../../../application/auth/auth_bloc.dart';
 
 class SplashPage extends StatelessWidget {
@@ -17,18 +16,10 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) {},
           authenticated: (value) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomePage(user: value.user),
-              ),
-            );
+            context.router.replace(HomeRoute(user: value.user));
           },
           unauthenticated: (_) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const SignInPage()),
-            );
+            context.router.replace(const SignInRoute());
           },
         );
       },
