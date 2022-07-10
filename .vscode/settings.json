@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 0.4,
+    "window.zoomLevel": 0,
     "editor.fontSize": 15,
     "dart.flutterSdkPath": "/home/masda/fvm/versions/3.0.0",
     "files.exclude": {

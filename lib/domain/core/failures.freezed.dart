@@ -23,6 +23,8 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) shortRestoFields,
     required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +33,8 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +43,8 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +54,10 @@ mixin _$ValueFailure<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(ShortRestoFields<T> value) shortRestoFields,
     required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +66,8 @@ mixin _$ValueFailure<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +76,8 @@ mixin _$ValueFailure<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -175,6 +189,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) shortRestoFields,
     required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
   }) {
     return invalidEmail(failedValue);
   }
@@ -186,6 +202,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -197,6 +215,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -212,6 +232,10 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(ShortRestoFields<T> value) shortRestoFields,
     required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
   }) {
     return invalidEmail(this);
   }
@@ -223,6 +247,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
   }) {
     return invalidEmail?.call(this);
   }
@@ -234,6 +260,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -327,6 +355,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) shortRestoFields,
     required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
   }) {
     return shortPassword(failedValue);
   }
@@ -338,6 +368,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
   }) {
     return shortPassword?.call(failedValue);
   }
@@ -349,6 +381,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -364,6 +398,10 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(ShortRestoFields<T> value) shortRestoFields,
     required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
   }) {
     return shortPassword(this);
   }
@@ -375,6 +413,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
   }) {
     return shortPassword?.call(this);
   }
@@ -386,6 +426,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -480,6 +522,8 @@ class _$ShortRestoFields<T> implements ShortRestoFields<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) shortRestoFields,
     required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
   }) {
     return shortRestoFields(failedValue);
   }
@@ -491,6 +535,8 @@ class _$ShortRestoFields<T> implements ShortRestoFields<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
   }) {
     return shortRestoFields?.call(failedValue);
   }
@@ -502,6 +548,8 @@ class _$ShortRestoFields<T> implements ShortRestoFields<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (shortRestoFields != null) {
@@ -517,6 +565,10 @@ class _$ShortRestoFields<T> implements ShortRestoFields<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(ShortRestoFields<T> value) shortRestoFields,
     required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
   }) {
     return shortRestoFields(this);
   }
@@ -528,6 +580,8 @@ class _$ShortRestoFields<T> implements ShortRestoFields<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
   }) {
     return shortRestoFields?.call(this);
   }
@@ -539,6 +593,8 @@ class _$ShortRestoFields<T> implements ShortRestoFields<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (shortRestoFields != null) {
@@ -633,6 +689,8 @@ class _$InvalidRestoTable<T> implements InvalidRestoTable<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) shortRestoFields,
     required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
   }) {
     return invalidRestoTable(failedValue);
   }
@@ -644,6 +702,8 @@ class _$InvalidRestoTable<T> implements InvalidRestoTable<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
   }) {
     return invalidRestoTable?.call(failedValue);
   }
@@ -655,6 +715,8 @@ class _$InvalidRestoTable<T> implements InvalidRestoTable<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? shortRestoFields,
     TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (invalidRestoTable != null) {
@@ -670,6 +732,10 @@ class _$InvalidRestoTable<T> implements InvalidRestoTable<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(ShortRestoFields<T> value) shortRestoFields,
     required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
   }) {
     return invalidRestoTable(this);
   }
@@ -681,6 +747,8 @@ class _$InvalidRestoTable<T> implements InvalidRestoTable<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
   }) {
     return invalidRestoTable?.call(this);
   }
@@ -692,6 +760,8 @@ class _$InvalidRestoTable<T> implements InvalidRestoTable<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(ShortRestoFields<T> value)? shortRestoFields,
     TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
     required TResult orElse(),
   }) {
     if (invalidRestoTable != null) {
@@ -710,5 +780,341 @@ abstract class InvalidRestoTable<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$InvalidRestoTableCopyWith<T, _$InvalidRestoTable<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidProductsFieldCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidProductsFieldCopyWith(_$InvalidProductsField<T> value,
+          $Res Function(_$InvalidProductsField<T>) then) =
+      __$$InvalidProductsFieldCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidProductsFieldCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidProductsFieldCopyWith<T, $Res> {
+  __$$InvalidProductsFieldCopyWithImpl(_$InvalidProductsField<T> _value,
+      $Res Function(_$InvalidProductsField<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidProductsField<T>));
+
+  @override
+  _$InvalidProductsField<T> get _value =>
+      super._value as _$InvalidProductsField<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidProductsField<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidProductsField<T> implements InvalidProductsField<T> {
+  const _$InvalidProductsField({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidProductsField(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidProductsField<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidProductsFieldCopyWith<T, _$InvalidProductsField<T>> get copyWith =>
+      __$$InvalidProductsFieldCopyWithImpl<T, _$InvalidProductsField<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) shortRestoFields,
+    required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
+  }) {
+    return invalidProductsField(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? shortRestoFields,
+    TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
+  }) {
+    return invalidProductsField?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? shortRestoFields,
+    TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
+    required TResult orElse(),
+  }) {
+    if (invalidProductsField != null) {
+      return invalidProductsField(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(ShortRestoFields<T> value) shortRestoFields,
+    required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
+  }) {
+    return invalidProductsField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortRestoFields<T> value)? shortRestoFields,
+    TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
+  }) {
+    return invalidProductsField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortRestoFields<T> value)? shortRestoFields,
+    TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
+    required TResult orElse(),
+  }) {
+    if (invalidProductsField != null) {
+      return invalidProductsField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidProductsField<T> implements ValueFailure<T> {
+  const factory InvalidProductsField({required final T failedValue}) =
+      _$InvalidProductsField<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvalidProductsFieldCopyWith<T, _$InvalidProductsField<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidProductsPriceCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidProductsPriceCopyWith(_$InvalidProductsPrice<T> value,
+          $Res Function(_$InvalidProductsPrice<T>) then) =
+      __$$InvalidProductsPriceCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidProductsPriceCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidProductsPriceCopyWith<T, $Res> {
+  __$$InvalidProductsPriceCopyWithImpl(_$InvalidProductsPrice<T> _value,
+      $Res Function(_$InvalidProductsPrice<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidProductsPrice<T>));
+
+  @override
+  _$InvalidProductsPrice<T> get _value =>
+      super._value as _$InvalidProductsPrice<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidProductsPrice<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidProductsPrice<T> implements InvalidProductsPrice<T> {
+  const _$InvalidProductsPrice({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidProductsPrice(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidProductsPrice<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidProductsPriceCopyWith<T, _$InvalidProductsPrice<T>> get copyWith =>
+      __$$InvalidProductsPriceCopyWithImpl<T, _$InvalidProductsPrice<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) shortRestoFields,
+    required TResult Function(T failedValue) invalidRestoTable,
+    required TResult Function(T failedValue) invalidProductsField,
+    required TResult Function(T failedValue) invalidProductsPrice,
+  }) {
+    return invalidProductsPrice(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? shortRestoFields,
+    TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
+  }) {
+    return invalidProductsPrice?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? shortRestoFields,
+    TResult Function(T failedValue)? invalidRestoTable,
+    TResult Function(T failedValue)? invalidProductsField,
+    TResult Function(T failedValue)? invalidProductsPrice,
+    required TResult orElse(),
+  }) {
+    if (invalidProductsPrice != null) {
+      return invalidProductsPrice(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(ShortRestoFields<T> value) shortRestoFields,
+    required TResult Function(InvalidRestoTable<T> value) invalidRestoTable,
+    required TResult Function(InvalidProductsField<T> value)
+        invalidProductsField,
+    required TResult Function(InvalidProductsPrice<T> value)
+        invalidProductsPrice,
+  }) {
+    return invalidProductsPrice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortRestoFields<T> value)? shortRestoFields,
+    TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
+  }) {
+    return invalidProductsPrice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortRestoFields<T> value)? shortRestoFields,
+    TResult Function(InvalidRestoTable<T> value)? invalidRestoTable,
+    TResult Function(InvalidProductsField<T> value)? invalidProductsField,
+    TResult Function(InvalidProductsPrice<T> value)? invalidProductsPrice,
+    required TResult orElse(),
+  }) {
+    if (invalidProductsPrice != null) {
+      return invalidProductsPrice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidProductsPrice<T> implements ValueFailure<T> {
+  const factory InvalidProductsPrice({required final T failedValue}) =
+      _$InvalidProductsPrice<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvalidProductsPriceCopyWith<T, _$InvalidProductsPrice<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

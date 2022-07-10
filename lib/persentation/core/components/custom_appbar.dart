@@ -1,14 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:repos/domain/models/user_model.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
   final String? tittle;
+  final Widget action;
 
-  const CustomAppBar({Key? key, required this.appBar, this.tittle})
-      : super(key: key);
+  const CustomAppBar({
+    Key? key,
+    required this.appBar,
+    this.tittle,
+    this.action = sibonanoh,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           Navigator.pop(context);
         },
       ),
+      actions: [action],
     );
   }
 

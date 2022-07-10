@@ -18,4 +18,12 @@ class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidRestoTable({
     required T failedValue,
   }) = InvalidRestoTable<T>;
+
+  const factory ValueFailure.invalidProductsField({
+    required T failedValue,
+  }) = InvalidProductsField<T>;
+
+  const factory ValueFailure.invalidProductsPrice({
+    required T failedValue,
+  }) = InvalidProductsPrice<T>;
 }

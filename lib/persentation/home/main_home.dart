@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const OrderPage(),
+              builder: (context) => OrderPage(user: widget.user),
             ),
           );
         },

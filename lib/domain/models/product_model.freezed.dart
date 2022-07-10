@@ -20,12 +20,14 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductModel {
+  String? get uid => throw _privateConstructorUsedError;
   String? get productName => throw _privateConstructorUsedError;
   double? get productPrice => throw _privateConstructorUsedError;
   String? get productCategory => throw _privateConstructorUsedError;
   String? get productImage => throw _privateConstructorUsedError;
   String? get productDescription => throw _privateConstructorUsedError;
   String? get productNote => throw _privateConstructorUsedError;
+  int get productStock => throw _privateConstructorUsedError;
   int get productQty => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,12 +42,14 @@ abstract class $ProductModelCopyWith<$Res> {
           ProductModel value, $Res Function(ProductModel) then) =
       _$ProductModelCopyWithImpl<$Res>;
   $Res call(
-      {String? productName,
+      {String? uid,
+      String? productName,
       double? productPrice,
       String? productCategory,
       String? productImage,
       String? productDescription,
       String? productNote,
+      int productStock,
       int productQty});
 }
 
@@ -59,15 +63,21 @@ class _$ProductModelCopyWithImpl<$Res> implements $ProductModelCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? uid = freezed,
     Object? productName = freezed,
     Object? productPrice = freezed,
     Object? productCategory = freezed,
     Object? productImage = freezed,
     Object? productDescription = freezed,
     Object? productNote = freezed,
+    Object? productStock = freezed,
     Object? productQty = freezed,
   }) {
     return _then(_value.copyWith(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
       productName: productName == freezed
           ? _value.productName
           : productName // ignore: cast_nullable_to_non_nullable
@@ -92,6 +102,10 @@ class _$ProductModelCopyWithImpl<$Res> implements $ProductModelCopyWith<$Res> {
           ? _value.productNote
           : productNote // ignore: cast_nullable_to_non_nullable
               as String?,
+      productStock: productStock == freezed
+          ? _value.productStock
+          : productStock // ignore: cast_nullable_to_non_nullable
+              as int,
       productQty: productQty == freezed
           ? _value.productQty
           : productQty // ignore: cast_nullable_to_non_nullable
@@ -108,12 +122,14 @@ abstract class _$$_ProductModelCopyWith<$Res>
       __$$_ProductModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? productName,
+      {String? uid,
+      String? productName,
       double? productPrice,
       String? productCategory,
       String? productImage,
       String? productDescription,
       String? productNote,
+      int productStock,
       int productQty});
 }
 
@@ -130,15 +146,21 @@ class __$$_ProductModelCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? uid = freezed,
     Object? productName = freezed,
     Object? productPrice = freezed,
     Object? productCategory = freezed,
     Object? productImage = freezed,
     Object? productDescription = freezed,
     Object? productNote = freezed,
+    Object? productStock = freezed,
     Object? productQty = freezed,
   }) {
     return _then(_$_ProductModel(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
       productName: productName == freezed
           ? _value.productName
           : productName // ignore: cast_nullable_to_non_nullable
@@ -163,6 +185,10 @@ class __$$_ProductModelCopyWithImpl<$Res>
           ? _value.productNote
           : productNote // ignore: cast_nullable_to_non_nullable
               as String?,
+      productStock: productStock == freezed
+          ? _value.productStock
+          : productStock // ignore: cast_nullable_to_non_nullable
+              as int,
       productQty: productQty == freezed
           ? _value.productQty
           : productQty // ignore: cast_nullable_to_non_nullable
@@ -175,17 +201,21 @@ class __$$_ProductModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ProductModel implements _ProductModel {
   const _$_ProductModel(
-      {this.productName,
+      {this.uid,
+      this.productName,
       this.productPrice,
       this.productCategory,
       this.productImage,
       this.productDescription,
       this.productNote,
+      this.productStock = 0,
       this.productQty = 0});
 
   factory _$_ProductModel.fromJson(Map<String, dynamic> json) =>
       _$$_ProductModelFromJson(json);
 
+  @override
+  final String? uid;
   @override
   final String? productName;
   @override
@@ -200,11 +230,14 @@ class _$_ProductModel implements _ProductModel {
   final String? productNote;
   @override
   @JsonKey()
+  final int productStock;
+  @override
+  @JsonKey()
   final int productQty;
 
   @override
   String toString() {
-    return 'ProductModel(productName: $productName, productPrice: $productPrice, productCategory: $productCategory, productImage: $productImage, productDescription: $productDescription, productNote: $productNote, productQty: $productQty)';
+    return 'ProductModel(uid: $uid, productName: $productName, productPrice: $productPrice, productCategory: $productCategory, productImage: $productImage, productDescription: $productDescription, productNote: $productNote, productStock: $productStock, productQty: $productQty)';
   }
 
   @override
@@ -212,6 +245,7 @@ class _$_ProductModel implements _ProductModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProductModel &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
                 .equals(other.productName, productName) &&
             const DeepCollectionEquality()
@@ -225,6 +259,8 @@ class _$_ProductModel implements _ProductModel {
             const DeepCollectionEquality()
                 .equals(other.productNote, productNote) &&
             const DeepCollectionEquality()
+                .equals(other.productStock, productStock) &&
+            const DeepCollectionEquality()
                 .equals(other.productQty, productQty));
   }
 
@@ -232,12 +268,14 @@ class _$_ProductModel implements _ProductModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(productName),
       const DeepCollectionEquality().hash(productPrice),
       const DeepCollectionEquality().hash(productCategory),
       const DeepCollectionEquality().hash(productImage),
       const DeepCollectionEquality().hash(productDescription),
       const DeepCollectionEquality().hash(productNote),
+      const DeepCollectionEquality().hash(productStock),
       const DeepCollectionEquality().hash(productQty));
 
   @JsonKey(ignore: true)
@@ -253,17 +291,21 @@ class _$_ProductModel implements _ProductModel {
 
 abstract class _ProductModel implements ProductModel {
   const factory _ProductModel(
-      {final String? productName,
+      {final String? uid,
+      final String? productName,
       final double? productPrice,
       final String? productCategory,
       final String? productImage,
       final String? productDescription,
       final String? productNote,
+      final int productStock,
       final int productQty}) = _$_ProductModel;
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
       _$_ProductModel.fromJson;
 
+  @override
+  String? get uid => throw _privateConstructorUsedError;
   @override
   String? get productName => throw _privateConstructorUsedError;
   @override
@@ -276,6 +318,8 @@ abstract class _ProductModel implements ProductModel {
   String? get productDescription => throw _privateConstructorUsedError;
   @override
   String? get productNote => throw _privateConstructorUsedError;
+  @override
+  int get productStock => throw _privateConstructorUsedError;
   @override
   int get productQty => throw _privateConstructorUsedError;
   @override

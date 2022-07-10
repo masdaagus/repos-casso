@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
@@ -6,8 +8,10 @@ import 'package:dartz/dartz.dart';
 import 'package:repos/domain/auth/i_auth_facade.dart';
 import 'package:repos/domain/models/user_model.dart';
 import 'package:repos/domain/auth/value_objects.dart';
-import 'package:repos/infrastructure/core/firestore_helper.dart';
-import 'package:repos/infrastructure/core/keys.dart';
+import 'package:repos/infrastructure/core/firebase_helper/firestore_helper.dart';
+import 'package:repos/infrastructure/core/firebase_helper/firestore_read.dart';
+import 'package:repos/infrastructure/core/firebase_helper/firestore_set.dart';
+import 'package:repos/infrastructure/core/strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @LazySingleton(as: IAuthFacade)
@@ -15,8 +19,6 @@ class ServiceAuthFacade implements IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
   final SharedPreferences _prefs;
-
-  // final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   ServiceAuthFacade(
     this._firebaseAuth,
@@ -56,10 +58,10 @@ class ServiceAuthFacade implements IAuthFacade {
       );
 
       /// register owner
-      await _firestore.setUser(_userModel);
+      await _firestore.createUser(_userModel);
 
       /// register resto
-      await _firestore.generateRestoAndUser(
+      await _firestore.generateRestoComponents(
         _userModel.uid!,
         restoTableStr,
         restoNameStr,
@@ -86,8 +88,6 @@ class ServiceAuthFacade implements IAuthFacade {
     final emailStr = emailAddress.getOrCrash().trim();
     final passwordStr = password.getOrCrash().trim();
 
-    /// LOGIN KARYAWAN
-    // if (emailStr.contains('@casso.com')) {
     try {
       final _userModel = await _firestore.getUser(emailStr);
       if (passwordStr == _userModel.password) {
@@ -101,26 +101,6 @@ class ServiceAuthFacade implements IAuthFacade {
     } catch (e) {
       return left(const AuthFailure.serverError());
     }
-    // }
-
-    /// LOGIN OWNER
-    // else {
-    //   try {
-    //     var _userCredential = await _firebaseAuth.signInWithEmailAndPassword(
-    //       email: emailStr,
-    //       password: passwordStr,
-    //     );
-
-    //     if (_userCredential.user != null) {
-    //       final _userModel = await _firestore.getUser(emailStr);
-    //       return right(_userModel);
-    //     } else {
-    //       return left(const AuthFailure.invalidEmailAndPassword());
-    //     }
-    //   } catch (_) {
-    //     return left(const AuthFailure.invalidEmailAndPassword());
-    //   }
-    // }
   }
 
   @override

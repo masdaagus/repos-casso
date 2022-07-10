@@ -1,10 +1,9 @@
 import 'package:repos/domain/models/resto_model.dart';
 
 import '../../domain/models/product_model.dart';
-import '../../domain/models/table_model.dart';
 import '../../domain/models/user_model.dart';
 
-List<UserModel> generateEmploye(String uid, String random) {
+List<UserModel> generateEmployeUsers(String uid, String random) {
   final List<UserModel> employe = [
     UserModel(
       name: "Kitchen",
@@ -42,36 +41,26 @@ const productsInit = [
     productDescription:
         'Nasi Goreng adalah nasi yg digoreng menggunakan minyak goreng',
     productCategory: 'FOOD',
-    productImage:
-        'https://i2.wp.com/chilipeppermadness.com/wp-content/uploads/2020/11/Nasi-Goreng-Indonesian-Fried-Rice-SQ.jpg',
+    productImage: img1,
+    productStock: 100,
   ),
   ProductModel(
     productName: 'Teh Manis',
     productPrice: 8000,
     productDescription: 'Teh Manis lorem ipsum',
     productCategory: 'DRINK',
-    productImage:
-        'https://www.tehsariwangi.com/uploads/ar/article/284/2fede6b2ed84c266f7b1c84b238e5d76.jpg',
+    productImage: img2,
+    productStock: 100,
   ),
   ProductModel(
     productName: 'Dimsum',
     productPrice: 22000,
     productDescription: 'Dimsum lorep ipsum',
     productCategory: 'DESSERT',
-    productImage:
-        'https://www.avenuecalgary.com/wp-content/uploads/2015/08/Brunch-UandMeDimSumCloseUp.jpg',
+    productImage: img3,
+    productStock: 100,
   ),
 ];
-
-List<TableModel> generateTables(int tableLength) {
-  final List<TableModel> tables = [];
-
-  for (var i = 0; i < tableLength; i++) {
-    tables.add(TableModel(guessName: null, tableNumber: i + 1));
-  }
-
-  return tables;
-}
 
 RestoModel generateResto(
   String restoName,
@@ -88,3 +77,10 @@ RestoModel generateResto(
 
   return resto;
 }
+
+const img1 =
+    'https://i2.wp.com/chilipeppermadness.com/wp-content/uploads/2020/11/Nasi-Goreng-Indonesian-Fried-Rice-SQ.jpg';
+const img2 =
+    'https://www.tehsariwangi.com/uploads/ar/article/284/2fede6b2ed84c266f7b1c84b238e5d76.jpg';
+const img3 =
+    'https://www.avenuecalgary.com/wp-content/uploads/2015/08/Brunch-UandMeDimSumCloseUp.jpg';

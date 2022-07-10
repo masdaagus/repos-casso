@@ -27,15 +27,16 @@ class CustomFormField extends StatelessWidget {
         onChanged: onChanged,
         keyboardType: isNum ? TextInputType.number : null,
         decoration: InputDecoration(
-            isDense: true,
-            label: Text(label ?? ''),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            prefixIcon: Icon(
-              iconData ?? Icons.person_outline_outlined,
-            ),
-            labelStyle: const TextStyle(color: cGrey, fontSize: 14)),
+          isDense: true,
+          label: Text(label ?? ''),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          prefixIcon: Icon(
+            iconData ?? Icons.person_outline_outlined,
+          ),
+          labelStyle: const TextStyle(color: cGrey, fontSize: 14),
+        ),
       ),
     );
   }

@@ -35,3 +35,26 @@ Either<ValueFailure<String>, String> validateRestoTable(String input) {
     return left(ValueFailure.invalidRestoTable(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateProductFieldsNotNull(
+  String input,
+) {
+  if (input.length >= 2) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidProductsField(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateProductPrice(
+  String input,
+) {
+  const String numRegex = r'^[+-]?(\d+([.,]\d*)?|[.,]\d+)([eE][+-]?\d+)?$';
+  double? isNegative = double.tryParse(input);
+
+  if (RegExp(numRegex).hasMatch(input) && isNegative! > 0) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidProductsPrice(failedValue: input));
+  }
+}
