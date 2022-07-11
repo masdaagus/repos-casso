@@ -1,12 +1,16 @@
 part of 'transaction_bloc.dart';
 
-@freezed
+@unfreezed
 class TransactionEvent with _$TransactionEvent {
-  const factory TransactionEvent.getUser(UserModel user) = _GetUser;
-  const factory TransactionEvent.itemsOrder(List<ProductModel> items) =
-      _ItemsOrder;
+  factory TransactionEvent.getUser(UserModel user) = _GetUser;
+  factory TransactionEvent.getProducts(List<ProductModel> products) =
+      _GetProducts;
+  factory TransactionEvent.incrmQty(ProductModel product) = _IncrmQty;
+  factory TransactionEvent.dcrmQty(ProductModel product) = _DcrmQty;
+  factory TransactionEvent.itemNotes(ProductModel product, String value) =
+      _ItemNotes;
 
-  const factory TransactionEvent.incrmQty(ProductModel product) = _IncrmQty;
-  const factory TransactionEvent.dcrmQty(ProductModel product) = _DcrmQty;
-  const factory TransactionEvent.idProduct(String productID) = _IdProduct;
+  factory TransactionEvent.guessNameAndTableNumber(
+      String guessName, int tableNumber) = _GuessNameAndTableNumber;
+  factory TransactionEvent.makeTransaction() = _MakeTransaction;
 }

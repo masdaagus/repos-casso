@@ -1,38 +1,45 @@
-import 'dart:developer';
 import 'dart:ui';
-
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repos/domain/models/table_model.dart';
-import 'package:auto_route/auto_route.dart';
-
 import 'package:repos/persentation/core/constant/constant.dart';
 import 'package:repos/persentation/order/menu_page/menu_page.dart';
 import 'package:repos/persentation/routes/app_router.dart';
+import '../../../../application/order/transaction/transaction_bloc.dart';
 
-import '../../../../application/order/order_bloc.dart';
+import '../../../../domain/models/product_model.dart';
 import 'button_popup.dart';
 
 class PopupInputGuessName extends StatelessWidget {
-  const PopupInputGuessName({Key? key, required this.table}) : super(key: key);
+  const PopupInputGuessName({
+    Key? key,
+    required this.table,
+    required this.products,
+  }) : super(key: key);
 
   final TableModel table;
+  final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
     return (table.guessName != null)
         ? AddOrder(table: table)
-        : GuessNameInputField(
-            table: table,
-            onSuccess: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => BlocProvider.value(
-                    value: BlocProvider.of<OrderBloc>(context),
-                    child: const MenuPage(),
-                  ),
-                ),
+        : BlocBuilder<TransactionBloc, TransactionState>(
+            builder: (context, state) {
+              return GuessNameInputField(
+                table: table,
+                onSuccess: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BlocProvider.value(
+                        value: BlocProvider.of<TransactionBloc>(context),
+                        child: MenuPage(products: products),
+                      ),
+                    ),
+                  );
+                },
               );
             },
           );
@@ -116,6 +123,7 @@ class GuessNameInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(spacing2),
@@ -150,6 +158,7 @@ class GuessNameInputField extends StatelessWidget {
                       child: Form(
                         key: formKey,
                         child: TextFormField(
+                          controller: controller,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "Nama tidak boleh kosong";
@@ -185,6 +194,12 @@ class GuessNameInputField extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
+                          context.read<TransactionBloc>().add(
+                                TransactionEvent.guessNameAndTableNumber(
+                                  controller.text,
+                                  table.tableNumber!,
+                                ),
+                              );
                           onSuccess();
                         }
                       },

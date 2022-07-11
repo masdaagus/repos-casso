@@ -11,12 +11,10 @@ class CardProductOrder extends StatelessWidget {
   const CardProductOrder({
     Key? key,
     required this.product,
-    required this.productData,
     this.detailProduct,
   }) : super(key: key);
 
   final ProductModel product;
-  final ProductModel productData;
   final VoidCallback? detailProduct;
 
   @override
@@ -87,13 +85,9 @@ class CardProductOrder extends StatelessWidget {
                     siboh,
                     sibonanoh,
                     sibonanoh,
-                    BlocBuilder<TransactionBloc, TransactionState>(
-                      builder: (context, state) {
-                        return _IncrementDecrement(
-                          product: productData,
-                          productID: product.uid!,
-                        );
-                      },
+                    _IncrementDecrement(
+                      // product: product,
+                      productID: product.uid!,
                     ),
                     siboh,
                   ],
@@ -110,32 +104,27 @@ class CardProductOrder extends StatelessWidget {
 class _IncrementDecrement extends StatelessWidget {
   const _IncrementDecrement({
     Key? key,
-    required this.product,
+    // required this.product,
     required this.productID,
   }) : super(key: key);
 
   final String productID;
-  final ProductModel product;
+  // final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
+    log('update widget increment');
     return BlocBuilder<TransactionBloc, TransactionState>(
       builder: (context, state) {
         final _bloc = context.read<TransactionBloc>();
-        // _bloc.add(TransactionEvent.idProduct(productID));
-        final product = state.product;
-        // final aa = state.order.itemOrder.firstWhere((e) => e.uid == productID);
-        // final tes = state.order.itemOrder.firstWhere((e) => e.uid == productID);
-        // log(tes.toString());
-
-        // log(productID);
+        final product = state.itesmOrder.firstWhere((e) => e.uid == productID);
         return (product.productQty >= 1)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // _bloc.add(OrderEvent.dcrmQty(product));
+                      _bloc.add(TransactionEvent.dcrmQty(product));
                     },
                     child: Container(
                       padding: const EdgeInsets.all(spacing / 2),
@@ -160,9 +149,7 @@ class _IncrementDecrement extends StatelessWidget {
                   sibow,
                   GestureDetector(
                     onTap: () {
-                      // _bloc.add(TransactionEvent.idProduct(productID));
-                      log('new product ');
-                      log('new product = ${state.product}');
+                      _bloc.add(TransactionEvent.incrmQty(product));
                     },
                     child: Container(
                       padding: const EdgeInsets.all(spacing / 2),
@@ -177,8 +164,7 @@ class _IncrementDecrement extends StatelessWidget {
               )
             : GestureDetector(
                 onTap: () {
-                  _bloc.add(TransactionEvent.idProduct(productID));
-                  _bloc.add(TransactionEvent.incrmQty(state.product));
+                  _bloc.add(TransactionEvent.incrmQty(product));
                 },
                 child: Center(
                   child: Container(

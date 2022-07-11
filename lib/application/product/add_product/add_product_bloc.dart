@@ -68,8 +68,8 @@ class AddProductBloc extends Bloc<AddProductEvent, AddProductState> {
           final _product = ProductModel(
             productImage: imageUrl,
             productName: state.name.getOrCrash(),
-            productPrice: double.parse(state.price.getOrCrash()),
-            productStock: int.parse(state.stock.getOrCrash()),
+            productPrice: state.price.getOrCrash(),
+            productStock: state.stock.getOrCrash(),
           );
 
           if (isNameV && isPriceV && isStockV) {
@@ -99,7 +99,7 @@ class AddProductBloc extends Bloc<AddProductEvent, AddProductState> {
 
           final _updatedProduct = e.product.copyWith(
             productName: state.name.getOrCrash(),
-            productPrice: double.parse(state.price.getOrCrash()),
+            productPrice: state.price.getOrCrash(),
             productImage: imageUrl ?? e.product.productImage,
             productDescription: state.description,
           );

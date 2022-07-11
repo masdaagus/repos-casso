@@ -38,7 +38,7 @@ class ServiceAuthFacade implements IAuthFacade {
     final emailStr = emailAddress.getOrCrash().trim();
     final passwordStr = password.getOrCrash().trim();
     final restoNameStr = restoName.getOrCrash().trim();
-    final restoTableStr = restoTable.getOrCrash().trim();
+    final restoTableint = restoTable.getOrCrash();
 
     try {
       await _firebaseAuth
@@ -63,7 +63,7 @@ class ServiceAuthFacade implements IAuthFacade {
       /// register resto
       await _firestore.generateRestoComponents(
         _userModel.uid!,
-        restoTableStr,
+        restoTableint,
         restoNameStr,
       );
 

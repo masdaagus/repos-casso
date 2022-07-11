@@ -125,7 +125,8 @@ class SignUpBody extends StatelessWidget {
                       iconData: Icons.table_bar_outlined,
                       label: 'Resto Table',
                       onChanged: (val) {
-                        _bloc.add(SignUpEvent.restoTableChanged(val));
+                        final _stock = int.tryParse(val);
+                        _bloc.add(SignUpEvent.restoTableChanged(_stock ?? 0));
                       },
                       validator: (val) {
                         if (val!.isEmpty) {

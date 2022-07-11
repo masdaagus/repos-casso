@@ -45,13 +45,13 @@ class RestoFields extends ValueObject<String> {
   const RestoFields._(this.value);
 }
 
-class RestoTable extends ValueObject<String> {
+class RestoTable extends ValueObject<int> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<int>, int> value;
 
-  factory RestoTable(String input) {
+  factory RestoTable(int input) {
     return RestoTable._(
-      validateRestoTable(input.trim()),
+      validateRestoTable(input),
     );
   }
 

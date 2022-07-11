@@ -27,40 +27,34 @@ class TakeAwayTab extends StatelessWidget {
           children: [
             FutureBuilder(
               builder: (context, snapshot) {
-                return BlocBuilder<TransactionBloc, TransactionState>(
-                  builder: (context, state) {
-                    final productsData = state.order.itemOrder;
-                    return Container(
-                      padding: const EdgeInsets.symmetric(horizontal: spacing1),
-                      child: GridView.count(
-                        shrinkWrap: true,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        crossAxisCount: 2,
-                        childAspectRatio: .75,
-                        physics: bouncing,
-                        children: [
-                          ...products.mapWithIndex((index, product) {
-                            return CardProductOrder(
-                              product: product,
-                              productData: productsData[index],
-                              detailProduct: () {
-                                Navigator.push(
-                                  context,
-                                  HeroDialogRoute(
-                                    builder: (context) => DetailProduct(
-                                      product: product,
-                                    ),
-                                  ),
-                                );
-                              },
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: spacing1),
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    crossAxisCount: 2,
+                    childAspectRatio: .75,
+                    physics: bouncing,
+                    children: [
+                      ...products.mapWithIndex((index, product) {
+                        return CardProductOrder(
+                          product: product,
+                          detailProduct: () {
+                            Navigator.push(
+                              context,
+                              HeroDialogRoute(
+                                builder: (context) => DetailProduct(
+                                  product: product,
+                                ),
+                              ),
                             );
-                          }),
-                          siboh3,
-                        ],
-                      ),
-                    );
-                  },
+                          },
+                        );
+                      }),
+                      siboh3,
+                    ],
+                  ),
                 );
               },
             ),
@@ -78,7 +72,7 @@ class TakeAwayTab extends StatelessWidget {
                   context: context,
                   builder: (_) {
                     return BlocProvider.value(
-                      value: BlocProvider.of<OrderBloc>(context),
+                      value: BlocProvider.of<TransactionBloc>(context),
                       child: Container(
                         height: _size.height * .9,
                         decoration: const BoxDecoration(

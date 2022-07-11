@@ -16,8 +16,8 @@ class AddProductState with _$AddProductState {
   factory AddProductState.initial() => AddProductState(
         image: null,
         name: ProductFieldsNotNull(''),
-        price: ProductFieldsPrices(''),
-        stock: ProductFieldsStock('100'),
+        price: ProductFieldsPrices(0.0),
+        stock: ProductFieldsStock(100),
         categorie: ProductFieldsNotNull(''),
         description: '',
         isLoading: false,

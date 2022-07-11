@@ -11,12 +11,12 @@ extension FirestoreHelper on FirebaseFirestore {
   /// [ GENERATE RESTO FIELDS ]
   Future<void> generateRestoComponents(
     String uid,
-    String tableCount,
+    int tableCount,
     String restoName,
   ) async {
     math.Random r = math.Random();
     String rndm = List.generate(4, (_) => r.nextInt(9)).join("").toString();
-    int _tableCount = int.parse(tableCount);
+    // int _tableCount = int.parse(tableCount);
 
     UserModel checkUser = await getUser('cashier$rndm@casso.com');
     final resto = generateResto(restoName);
@@ -25,7 +25,7 @@ extension FirestoreHelper on FirebaseFirestore {
     while (checkUser.uid == null) {
       try {
         await createResto(uid, resto);
-        await createTable(uid, _tableCount);
+        await createTable(uid, tableCount);
         await generateEmploye(uid, employes);
         for (var i = 0; i < productsInit.length; i++) {
           await createProduct(uid, productsInit[i]);

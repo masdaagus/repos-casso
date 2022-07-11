@@ -21,7 +21,7 @@ mixin _$SignUpEvent {
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(String restoName) restoNameChanged,
-    required TResult Function(String restoTable) restoTableChanged,
+    required TResult Function(int restoTable) restoTableChanged,
     required TResult Function() signUp,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$SignUpEvent {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$SignUpEvent {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
     required TResult orElse(),
   }) =>
@@ -158,7 +158,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(String restoName) restoNameChanged,
-    required TResult Function(String restoTable) restoTableChanged,
+    required TResult Function(int restoTable) restoTableChanged,
     required TResult Function() signUp,
   }) {
     return emailChanged(email);
@@ -170,7 +170,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
   }) {
     return emailChanged?.call(email);
@@ -182,7 +182,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
     required TResult orElse(),
   }) {
@@ -310,7 +310,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(String restoName) restoNameChanged,
-    required TResult Function(String restoTable) restoTableChanged,
+    required TResult Function(int restoTable) restoTableChanged,
     required TResult Function() signUp,
   }) {
     return passwordChanged(password);
@@ -322,7 +322,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
   }) {
     return passwordChanged?.call(password);
@@ -334,7 +334,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
     required TResult orElse(),
   }) {
@@ -462,7 +462,7 @@ class _$_RestoNameChanged implements _RestoNameChanged {
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(String restoName) restoNameChanged,
-    required TResult Function(String restoTable) restoTableChanged,
+    required TResult Function(int restoTable) restoTableChanged,
     required TResult Function() signUp,
   }) {
     return restoNameChanged(restoName);
@@ -474,7 +474,7 @@ class _$_RestoNameChanged implements _RestoNameChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
   }) {
     return restoNameChanged?.call(restoName);
@@ -486,7 +486,7 @@ class _$_RestoNameChanged implements _RestoNameChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
     required TResult orElse(),
   }) {
@@ -551,7 +551,7 @@ abstract class _$$_RestoTableChangedCopyWith<$Res> {
   factory _$$_RestoTableChangedCopyWith(_$_RestoTableChanged value,
           $Res Function(_$_RestoTableChanged) then) =
       __$$_RestoTableChangedCopyWithImpl<$Res>;
-  $Res call({String restoTable});
+  $Res call({int restoTable});
 }
 
 /// @nodoc
@@ -573,7 +573,7 @@ class __$$_RestoTableChangedCopyWithImpl<$Res>
       restoTable == freezed
           ? _value.restoTable
           : restoTable // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -584,7 +584,7 @@ class _$_RestoTableChanged implements _RestoTableChanged {
   const _$_RestoTableChanged(this.restoTable);
 
   @override
-  final String restoTable;
+  final int restoTable;
 
   @override
   String toString() {
@@ -616,7 +616,7 @@ class _$_RestoTableChanged implements _RestoTableChanged {
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(String restoName) restoNameChanged,
-    required TResult Function(String restoTable) restoTableChanged,
+    required TResult Function(int restoTable) restoTableChanged,
     required TResult Function() signUp,
   }) {
     return restoTableChanged(restoTable);
@@ -628,7 +628,7 @@ class _$_RestoTableChanged implements _RestoTableChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
   }) {
     return restoTableChanged?.call(restoTable);
@@ -640,7 +640,7 @@ class _$_RestoTableChanged implements _RestoTableChanged {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
     required TResult orElse(),
   }) {
@@ -692,10 +692,9 @@ class _$_RestoTableChanged implements _RestoTableChanged {
 }
 
 abstract class _RestoTableChanged implements SignUpEvent {
-  const factory _RestoTableChanged(final String restoTable) =
-      _$_RestoTableChanged;
+  const factory _RestoTableChanged(final int restoTable) = _$_RestoTableChanged;
 
-  String get restoTable => throw _privateConstructorUsedError;
+  int get restoTable => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_RestoTableChangedCopyWith<_$_RestoTableChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -742,7 +741,7 @@ class _$_SignUp implements _SignUp {
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function(String restoName) restoNameChanged,
-    required TResult Function(String restoTable) restoTableChanged,
+    required TResult Function(int restoTable) restoTableChanged,
     required TResult Function() signUp,
   }) {
     return signUp();
@@ -754,7 +753,7 @@ class _$_SignUp implements _SignUp {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
   }) {
     return signUp?.call();
@@ -766,7 +765,7 @@ class _$_SignUp implements _SignUp {
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function(String restoName)? restoNameChanged,
-    TResult Function(String restoTable)? restoTableChanged,
+    TResult Function(int restoTable)? restoTableChanged,
     TResult Function()? signUp,
     required TResult orElse(),
   }) {

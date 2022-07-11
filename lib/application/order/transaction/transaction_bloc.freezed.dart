@@ -19,56 +19,72 @@ mixin _$TransactionEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserModel user) getUser,
-    required TResult Function(List<ProductModel> items) itemsOrder,
+    required TResult Function(List<ProductModel> products) getProducts,
     required TResult Function(ProductModel product) incrmQty,
     required TResult Function(ProductModel product) dcrmQty,
-    required TResult Function(String productID) idProduct,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
-    required TResult Function(_ItemsOrder value) itemsOrder,
+    required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_IncrmQty value) incrmQty,
     required TResult Function(_DcrmQty value) dcrmQty,
-    required TResult Function(_IdProduct value) idProduct,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,27 +150,15 @@ class __$$_GetUserCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GetUser implements _GetUser {
-  const _$_GetUser(this.user);
+  _$_GetUser(this.user);
 
   @override
-  final UserModel user;
+  UserModel user;
 
   @override
   String toString() {
     return 'TransactionEvent.getUser(user: $user)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_GetUser &&
-            const DeepCollectionEquality().equals(other.user, user));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -165,10 +169,13 @@ class _$_GetUser implements _GetUser {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserModel user) getUser,
-    required TResult Function(List<ProductModel> items) itemsOrder,
+    required TResult Function(List<ProductModel> products) getProducts,
     required TResult Function(ProductModel product) incrmQty,
     required TResult Function(ProductModel product) dcrmQty,
-    required TResult Function(String productID) idProduct,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
   }) {
     return getUser(user);
   }
@@ -177,10 +184,13 @@ class _$_GetUser implements _GetUser {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
   }) {
     return getUser?.call(user);
   }
@@ -189,10 +199,13 @@ class _$_GetUser implements _GetUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -205,10 +218,13 @@ class _$_GetUser implements _GetUser {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
-    required TResult Function(_ItemsOrder value) itemsOrder,
+    required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_IncrmQty value) incrmQty,
     required TResult Function(_DcrmQty value) dcrmQty,
-    required TResult Function(_IdProduct value) idProduct,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
   }) {
     return getUser(this);
   }
@@ -217,10 +233,12 @@ class _$_GetUser implements _GetUser {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
   }) {
     return getUser?.call(this);
   }
@@ -229,10 +247,12 @@ class _$_GetUser implements _GetUser {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -243,7 +263,7 @@ class _$_GetUser implements _GetUser {
 }
 
 abstract class _GetUser implements TransactionEvent {
-  const factory _GetUser(final UserModel user) = _$_GetUser;
+  factory _GetUser(UserModel user) = _$_GetUser;
 
   UserModel get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -252,32 +272,32 @@ abstract class _GetUser implements TransactionEvent {
 }
 
 /// @nodoc
-abstract class _$$_ItemsOrderCopyWith<$Res> {
-  factory _$$_ItemsOrderCopyWith(
-          _$_ItemsOrder value, $Res Function(_$_ItemsOrder) then) =
-      __$$_ItemsOrderCopyWithImpl<$Res>;
-  $Res call({List<ProductModel> items});
+abstract class _$$_GetProductsCopyWith<$Res> {
+  factory _$$_GetProductsCopyWith(
+          _$_GetProducts value, $Res Function(_$_GetProducts) then) =
+      __$$_GetProductsCopyWithImpl<$Res>;
+  $Res call({List<ProductModel> products});
 }
 
 /// @nodoc
-class __$$_ItemsOrderCopyWithImpl<$Res>
+class __$$_GetProductsCopyWithImpl<$Res>
     extends _$TransactionEventCopyWithImpl<$Res>
-    implements _$$_ItemsOrderCopyWith<$Res> {
-  __$$_ItemsOrderCopyWithImpl(
-      _$_ItemsOrder _value, $Res Function(_$_ItemsOrder) _then)
-      : super(_value, (v) => _then(v as _$_ItemsOrder));
+    implements _$$_GetProductsCopyWith<$Res> {
+  __$$_GetProductsCopyWithImpl(
+      _$_GetProducts _value, $Res Function(_$_GetProducts) _then)
+      : super(_value, (v) => _then(v as _$_GetProducts));
 
   @override
-  _$_ItemsOrder get _value => super._value as _$_ItemsOrder;
+  _$_GetProducts get _value => super._value as _$_GetProducts;
 
   @override
   $Res call({
-    Object? items = freezed,
+    Object? products = freezed,
   }) {
-    return _then(_$_ItemsOrder(
-      items == freezed
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
+    return _then(_$_GetProducts(
+      products == freezed
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
               as List<ProductModel>,
     ));
   }
@@ -285,74 +305,67 @@ class __$$_ItemsOrderCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ItemsOrder implements _ItemsOrder {
-  const _$_ItemsOrder(final List<ProductModel> items) : _items = items;
+class _$_GetProducts implements _GetProducts {
+  _$_GetProducts(this.products);
 
-  final List<ProductModel> _items;
   @override
-  List<ProductModel> get items {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
-  }
+  List<ProductModel> products;
 
   @override
   String toString() {
-    return 'TransactionEvent.itemsOrder(items: $items)';
+    return 'TransactionEvent.getProducts(products: $products)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ItemsOrder &&
-            const DeepCollectionEquality().equals(other._items, _items));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
 
   @JsonKey(ignore: true)
   @override
-  _$$_ItemsOrderCopyWith<_$_ItemsOrder> get copyWith =>
-      __$$_ItemsOrderCopyWithImpl<_$_ItemsOrder>(this, _$identity);
+  _$$_GetProductsCopyWith<_$_GetProducts> get copyWith =>
+      __$$_GetProductsCopyWithImpl<_$_GetProducts>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserModel user) getUser,
-    required TResult Function(List<ProductModel> items) itemsOrder,
+    required TResult Function(List<ProductModel> products) getProducts,
     required TResult Function(ProductModel product) incrmQty,
     required TResult Function(ProductModel product) dcrmQty,
-    required TResult Function(String productID) idProduct,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
   }) {
-    return itemsOrder(items);
+    return getProducts(products);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
   }) {
-    return itemsOrder?.call(items);
+    return getProducts?.call(products);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
     required TResult orElse(),
   }) {
-    if (itemsOrder != null) {
-      return itemsOrder(items);
+    if (getProducts != null) {
+      return getProducts(products);
     }
     return orElse();
   }
@@ -361,49 +374,56 @@ class _$_ItemsOrder implements _ItemsOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
-    required TResult Function(_ItemsOrder value) itemsOrder,
+    required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_IncrmQty value) incrmQty,
     required TResult Function(_DcrmQty value) dcrmQty,
-    required TResult Function(_IdProduct value) idProduct,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
   }) {
-    return itemsOrder(this);
+    return getProducts(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
   }) {
-    return itemsOrder?.call(this);
+    return getProducts?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
     required TResult orElse(),
   }) {
-    if (itemsOrder != null) {
-      return itemsOrder(this);
+    if (getProducts != null) {
+      return getProducts(this);
     }
     return orElse();
   }
 }
 
-abstract class _ItemsOrder implements TransactionEvent {
-  const factory _ItemsOrder(final List<ProductModel> items) = _$_ItemsOrder;
+abstract class _GetProducts implements TransactionEvent {
+  factory _GetProducts(List<ProductModel> products) = _$_GetProducts;
 
-  List<ProductModel> get items => throw _privateConstructorUsedError;
+  List<ProductModel> get products => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_ItemsOrderCopyWith<_$_ItemsOrder> get copyWith =>
+  _$$_GetProductsCopyWith<_$_GetProducts> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -451,27 +471,15 @@ class __$$_IncrmQtyCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_IncrmQty implements _IncrmQty {
-  const _$_IncrmQty(this.product);
+  _$_IncrmQty(this.product);
 
   @override
-  final ProductModel product;
+  ProductModel product;
 
   @override
   String toString() {
     return 'TransactionEvent.incrmQty(product: $product)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IncrmQty &&
-            const DeepCollectionEquality().equals(other.product, product));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(product));
 
   @JsonKey(ignore: true)
   @override
@@ -482,10 +490,13 @@ class _$_IncrmQty implements _IncrmQty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserModel user) getUser,
-    required TResult Function(List<ProductModel> items) itemsOrder,
+    required TResult Function(List<ProductModel> products) getProducts,
     required TResult Function(ProductModel product) incrmQty,
     required TResult Function(ProductModel product) dcrmQty,
-    required TResult Function(String productID) idProduct,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
   }) {
     return incrmQty(product);
   }
@@ -494,10 +505,13 @@ class _$_IncrmQty implements _IncrmQty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
   }) {
     return incrmQty?.call(product);
   }
@@ -506,10 +520,13 @@ class _$_IncrmQty implements _IncrmQty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
     required TResult orElse(),
   }) {
     if (incrmQty != null) {
@@ -522,10 +539,13 @@ class _$_IncrmQty implements _IncrmQty {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
-    required TResult Function(_ItemsOrder value) itemsOrder,
+    required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_IncrmQty value) incrmQty,
     required TResult Function(_DcrmQty value) dcrmQty,
-    required TResult Function(_IdProduct value) idProduct,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
   }) {
     return incrmQty(this);
   }
@@ -534,10 +554,12 @@ class _$_IncrmQty implements _IncrmQty {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
   }) {
     return incrmQty?.call(this);
   }
@@ -546,10 +568,12 @@ class _$_IncrmQty implements _IncrmQty {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
     required TResult orElse(),
   }) {
     if (incrmQty != null) {
@@ -560,7 +584,7 @@ class _$_IncrmQty implements _IncrmQty {
 }
 
 abstract class _IncrmQty implements TransactionEvent {
-  const factory _IncrmQty(final ProductModel product) = _$_IncrmQty;
+  factory _IncrmQty(ProductModel product) = _$_IncrmQty;
 
   ProductModel get product => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -611,27 +635,15 @@ class __$$_DcrmQtyCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DcrmQty implements _DcrmQty {
-  const _$_DcrmQty(this.product);
+  _$_DcrmQty(this.product);
 
   @override
-  final ProductModel product;
+  ProductModel product;
 
   @override
   String toString() {
     return 'TransactionEvent.dcrmQty(product: $product)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_DcrmQty &&
-            const DeepCollectionEquality().equals(other.product, product));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(product));
 
   @JsonKey(ignore: true)
   @override
@@ -642,10 +654,13 @@ class _$_DcrmQty implements _DcrmQty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserModel user) getUser,
-    required TResult Function(List<ProductModel> items) itemsOrder,
+    required TResult Function(List<ProductModel> products) getProducts,
     required TResult Function(ProductModel product) incrmQty,
     required TResult Function(ProductModel product) dcrmQty,
-    required TResult Function(String productID) idProduct,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
   }) {
     return dcrmQty(product);
   }
@@ -654,10 +669,13 @@ class _$_DcrmQty implements _DcrmQty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
   }) {
     return dcrmQty?.call(product);
   }
@@ -666,10 +684,13 @@ class _$_DcrmQty implements _DcrmQty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
     required TResult orElse(),
   }) {
     if (dcrmQty != null) {
@@ -682,10 +703,13 @@ class _$_DcrmQty implements _DcrmQty {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
-    required TResult Function(_ItemsOrder value) itemsOrder,
+    required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_IncrmQty value) incrmQty,
     required TResult Function(_DcrmQty value) dcrmQty,
-    required TResult Function(_IdProduct value) idProduct,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
   }) {
     return dcrmQty(this);
   }
@@ -694,10 +718,12 @@ class _$_DcrmQty implements _DcrmQty {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
   }) {
     return dcrmQty?.call(this);
   }
@@ -706,10 +732,12 @@ class _$_DcrmQty implements _DcrmQty {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
     required TResult orElse(),
   }) {
     if (dcrmQty != null) {
@@ -720,7 +748,7 @@ class _$_DcrmQty implements _DcrmQty {
 }
 
 abstract class _DcrmQty implements TransactionEvent {
-  const factory _DcrmQty(final ProductModel product) = _$_DcrmQty;
+  factory _DcrmQty(ProductModel product) = _$_DcrmQty;
 
   ProductModel get product => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -729,103 +757,116 @@ abstract class _DcrmQty implements TransactionEvent {
 }
 
 /// @nodoc
-abstract class _$$_IdProductCopyWith<$Res> {
-  factory _$$_IdProductCopyWith(
-          _$_IdProduct value, $Res Function(_$_IdProduct) then) =
-      __$$_IdProductCopyWithImpl<$Res>;
-  $Res call({String productID});
+abstract class _$$_ItemNotesCopyWith<$Res> {
+  factory _$$_ItemNotesCopyWith(
+          _$_ItemNotes value, $Res Function(_$_ItemNotes) then) =
+      __$$_ItemNotesCopyWithImpl<$Res>;
+  $Res call({ProductModel product, String value});
+
+  $ProductModelCopyWith<$Res> get product;
 }
 
 /// @nodoc
-class __$$_IdProductCopyWithImpl<$Res>
+class __$$_ItemNotesCopyWithImpl<$Res>
     extends _$TransactionEventCopyWithImpl<$Res>
-    implements _$$_IdProductCopyWith<$Res> {
-  __$$_IdProductCopyWithImpl(
-      _$_IdProduct _value, $Res Function(_$_IdProduct) _then)
-      : super(_value, (v) => _then(v as _$_IdProduct));
+    implements _$$_ItemNotesCopyWith<$Res> {
+  __$$_ItemNotesCopyWithImpl(
+      _$_ItemNotes _value, $Res Function(_$_ItemNotes) _then)
+      : super(_value, (v) => _then(v as _$_ItemNotes));
 
   @override
-  _$_IdProduct get _value => super._value as _$_IdProduct;
+  _$_ItemNotes get _value => super._value as _$_ItemNotes;
 
   @override
   $Res call({
-    Object? productID = freezed,
+    Object? product = freezed,
+    Object? value = freezed,
   }) {
-    return _then(_$_IdProduct(
-      productID == freezed
-          ? _value.productID
-          : productID // ignore: cast_nullable_to_non_nullable
+    return _then(_$_ItemNotes(
+      product == freezed
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as ProductModel,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+
+  @override
+  $ProductModelCopyWith<$Res> get product {
+    return $ProductModelCopyWith<$Res>(_value.product, (value) {
+      return _then(_value.copyWith(product: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$_IdProduct implements _IdProduct {
-  const _$_IdProduct(this.productID);
+class _$_ItemNotes implements _ItemNotes {
+  _$_ItemNotes(this.product, this.value);
 
   @override
-  final String productID;
+  ProductModel product;
+  @override
+  String value;
 
   @override
   String toString() {
-    return 'TransactionEvent.idProduct(productID: $productID)';
+    return 'TransactionEvent.itemNotes(product: $product, value: $value)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_IdProduct &&
-            const DeepCollectionEquality().equals(other.productID, productID));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(productID));
 
   @JsonKey(ignore: true)
   @override
-  _$$_IdProductCopyWith<_$_IdProduct> get copyWith =>
-      __$$_IdProductCopyWithImpl<_$_IdProduct>(this, _$identity);
+  _$$_ItemNotesCopyWith<_$_ItemNotes> get copyWith =>
+      __$$_ItemNotesCopyWithImpl<_$_ItemNotes>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserModel user) getUser,
-    required TResult Function(List<ProductModel> items) itemsOrder,
+    required TResult Function(List<ProductModel> products) getProducts,
     required TResult Function(ProductModel product) incrmQty,
     required TResult Function(ProductModel product) dcrmQty,
-    required TResult Function(String productID) idProduct,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
   }) {
-    return idProduct(productID);
+    return itemNotes(product, value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
   }) {
-    return idProduct?.call(productID);
+    return itemNotes?.call(product, value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserModel user)? getUser,
-    TResult Function(List<ProductModel> items)? itemsOrder,
+    TResult Function(List<ProductModel> products)? getProducts,
     TResult Function(ProductModel product)? incrmQty,
     TResult Function(ProductModel product)? dcrmQty,
-    TResult Function(String productID)? idProduct,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
     required TResult orElse(),
   }) {
-    if (idProduct != null) {
-      return idProduct(productID);
+    if (itemNotes != null) {
+      return itemNotes(product, value);
     }
     return orElse();
   }
@@ -834,58 +875,367 @@ class _$_IdProduct implements _IdProduct {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
-    required TResult Function(_ItemsOrder value) itemsOrder,
+    required TResult Function(_GetProducts value) getProducts,
     required TResult Function(_IncrmQty value) incrmQty,
     required TResult Function(_DcrmQty value) dcrmQty,
-    required TResult Function(_IdProduct value) idProduct,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
   }) {
-    return idProduct(this);
+    return itemNotes(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
   }) {
-    return idProduct?.call(this);
+    return itemNotes?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
-    TResult Function(_ItemsOrder value)? itemsOrder,
+    TResult Function(_GetProducts value)? getProducts,
     TResult Function(_IncrmQty value)? incrmQty,
     TResult Function(_DcrmQty value)? dcrmQty,
-    TResult Function(_IdProduct value)? idProduct,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
     required TResult orElse(),
   }) {
-    if (idProduct != null) {
-      return idProduct(this);
+    if (itemNotes != null) {
+      return itemNotes(this);
     }
     return orElse();
   }
 }
 
-abstract class _IdProduct implements TransactionEvent {
-  const factory _IdProduct(final String productID) = _$_IdProduct;
+abstract class _ItemNotes implements TransactionEvent {
+  factory _ItemNotes(ProductModel product, String value) = _$_ItemNotes;
 
-  String get productID => throw _privateConstructorUsedError;
+  ProductModel get product => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_IdProductCopyWith<_$_IdProduct> get copyWith =>
+  _$$_ItemNotesCopyWith<_$_ItemNotes> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$_GuessNameAndTableNumberCopyWith<$Res> {
+  factory _$$_GuessNameAndTableNumberCopyWith(_$_GuessNameAndTableNumber value,
+          $Res Function(_$_GuessNameAndTableNumber) then) =
+      __$$_GuessNameAndTableNumberCopyWithImpl<$Res>;
+  $Res call({String guessName, int tableNumber});
+}
+
+/// @nodoc
+class __$$_GuessNameAndTableNumberCopyWithImpl<$Res>
+    extends _$TransactionEventCopyWithImpl<$Res>
+    implements _$$_GuessNameAndTableNumberCopyWith<$Res> {
+  __$$_GuessNameAndTableNumberCopyWithImpl(_$_GuessNameAndTableNumber _value,
+      $Res Function(_$_GuessNameAndTableNumber) _then)
+      : super(_value, (v) => _then(v as _$_GuessNameAndTableNumber));
+
+  @override
+  _$_GuessNameAndTableNumber get _value =>
+      super._value as _$_GuessNameAndTableNumber;
+
+  @override
+  $Res call({
+    Object? guessName = freezed,
+    Object? tableNumber = freezed,
+  }) {
+    return _then(_$_GuessNameAndTableNumber(
+      guessName == freezed
+          ? _value.guessName
+          : guessName // ignore: cast_nullable_to_non_nullable
+              as String,
+      tableNumber == freezed
+          ? _value.tableNumber
+          : tableNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GuessNameAndTableNumber implements _GuessNameAndTableNumber {
+  _$_GuessNameAndTableNumber(this.guessName, this.tableNumber);
+
+  @override
+  String guessName;
+  @override
+  int tableNumber;
+
+  @override
+  String toString() {
+    return 'TransactionEvent.guessNameAndTableNumber(guessName: $guessName, tableNumber: $tableNumber)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GuessNameAndTableNumberCopyWith<_$_GuessNameAndTableNumber>
+      get copyWith =>
+          __$$_GuessNameAndTableNumberCopyWithImpl<_$_GuessNameAndTableNumber>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserModel user) getUser,
+    required TResult Function(List<ProductModel> products) getProducts,
+    required TResult Function(ProductModel product) incrmQty,
+    required TResult Function(ProductModel product) dcrmQty,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
+  }) {
+    return guessNameAndTableNumber(guessName, tableNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UserModel user)? getUser,
+    TResult Function(List<ProductModel> products)? getProducts,
+    TResult Function(ProductModel product)? incrmQty,
+    TResult Function(ProductModel product)? dcrmQty,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
+  }) {
+    return guessNameAndTableNumber?.call(guessName, tableNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserModel user)? getUser,
+    TResult Function(List<ProductModel> products)? getProducts,
+    TResult Function(ProductModel product)? incrmQty,
+    TResult Function(ProductModel product)? dcrmQty,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
+    required TResult orElse(),
+  }) {
+    if (guessNameAndTableNumber != null) {
+      return guessNameAndTableNumber(guessName, tableNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetUser value) getUser,
+    required TResult Function(_GetProducts value) getProducts,
+    required TResult Function(_IncrmQty value) incrmQty,
+    required TResult Function(_DcrmQty value) dcrmQty,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
+  }) {
+    return guessNameAndTableNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetUser value)? getUser,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_IncrmQty value)? incrmQty,
+    TResult Function(_DcrmQty value)? dcrmQty,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
+  }) {
+    return guessNameAndTableNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetUser value)? getUser,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_IncrmQty value)? incrmQty,
+    TResult Function(_DcrmQty value)? dcrmQty,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
+    required TResult orElse(),
+  }) {
+    if (guessNameAndTableNumber != null) {
+      return guessNameAndTableNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GuessNameAndTableNumber implements TransactionEvent {
+  factory _GuessNameAndTableNumber(String guessName, int tableNumber) =
+      _$_GuessNameAndTableNumber;
+
+  String get guessName => throw _privateConstructorUsedError;
+  int get tableNumber => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_GuessNameAndTableNumberCopyWith<_$_GuessNameAndTableNumber>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_MakeTransactionCopyWith<$Res> {
+  factory _$$_MakeTransactionCopyWith(
+          _$_MakeTransaction value, $Res Function(_$_MakeTransaction) then) =
+      __$$_MakeTransactionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_MakeTransactionCopyWithImpl<$Res>
+    extends _$TransactionEventCopyWithImpl<$Res>
+    implements _$$_MakeTransactionCopyWith<$Res> {
+  __$$_MakeTransactionCopyWithImpl(
+      _$_MakeTransaction _value, $Res Function(_$_MakeTransaction) _then)
+      : super(_value, (v) => _then(v as _$_MakeTransaction));
+
+  @override
+  _$_MakeTransaction get _value => super._value as _$_MakeTransaction;
+}
+
+/// @nodoc
+
+class _$_MakeTransaction implements _MakeTransaction {
+  _$_MakeTransaction();
+
+  @override
+  String toString() {
+    return 'TransactionEvent.makeTransaction()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserModel user) getUser,
+    required TResult Function(List<ProductModel> products) getProducts,
+    required TResult Function(ProductModel product) incrmQty,
+    required TResult Function(ProductModel product) dcrmQty,
+    required TResult Function(ProductModel product, String value) itemNotes,
+    required TResult Function(String guessName, int tableNumber)
+        guessNameAndTableNumber,
+    required TResult Function() makeTransaction,
+  }) {
+    return makeTransaction();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(UserModel user)? getUser,
+    TResult Function(List<ProductModel> products)? getProducts,
+    TResult Function(ProductModel product)? incrmQty,
+    TResult Function(ProductModel product)? dcrmQty,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
+  }) {
+    return makeTransaction?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserModel user)? getUser,
+    TResult Function(List<ProductModel> products)? getProducts,
+    TResult Function(ProductModel product)? incrmQty,
+    TResult Function(ProductModel product)? dcrmQty,
+    TResult Function(ProductModel product, String value)? itemNotes,
+    TResult Function(String guessName, int tableNumber)?
+        guessNameAndTableNumber,
+    TResult Function()? makeTransaction,
+    required TResult orElse(),
+  }) {
+    if (makeTransaction != null) {
+      return makeTransaction();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetUser value) getUser,
+    required TResult Function(_GetProducts value) getProducts,
+    required TResult Function(_IncrmQty value) incrmQty,
+    required TResult Function(_DcrmQty value) dcrmQty,
+    required TResult Function(_ItemNotes value) itemNotes,
+    required TResult Function(_GuessNameAndTableNumber value)
+        guessNameAndTableNumber,
+    required TResult Function(_MakeTransaction value) makeTransaction,
+  }) {
+    return makeTransaction(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetUser value)? getUser,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_IncrmQty value)? incrmQty,
+    TResult Function(_DcrmQty value)? dcrmQty,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
+  }) {
+    return makeTransaction?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetUser value)? getUser,
+    TResult Function(_GetProducts value)? getProducts,
+    TResult Function(_IncrmQty value)? incrmQty,
+    TResult Function(_DcrmQty value)? dcrmQty,
+    TResult Function(_ItemNotes value)? itemNotes,
+    TResult Function(_GuessNameAndTableNumber value)? guessNameAndTableNumber,
+    TResult Function(_MakeTransaction value)? makeTransaction,
+    required TResult orElse(),
+  }) {
+    if (makeTransaction != null) {
+      return makeTransaction(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MakeTransaction implements TransactionEvent {
+  factory _MakeTransaction() = _$_MakeTransaction;
+}
+
+/// @nodoc
 mixin _$TransactionState {
+  UserModel get user => throw _privateConstructorUsedError;
+  set user(UserModel value) => throw _privateConstructorUsedError;
   OrderModel get order => throw _privateConstructorUsedError;
   set order(OrderModel value) => throw _privateConstructorUsedError;
-  ProductModel get product => throw _privateConstructorUsedError;
-  set product(ProductModel value) => throw _privateConstructorUsedError;
+  List<ProductModel> get itesmOrder => throw _privateConstructorUsedError;
+  set itesmOrder(List<ProductModel> value) =>
+      throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   set isLoading(bool value) => throw _privateConstructorUsedError;
   bool get isOrderSuccess => throw _privateConstructorUsedError;
@@ -902,13 +1252,14 @@ abstract class $TransactionStateCopyWith<$Res> {
           TransactionState value, $Res Function(TransactionState) then) =
       _$TransactionStateCopyWithImpl<$Res>;
   $Res call(
-      {OrderModel order,
-      ProductModel product,
+      {UserModel user,
+      OrderModel order,
+      List<ProductModel> itesmOrder,
       bool isLoading,
       bool isOrderSuccess});
 
+  $UserModelCopyWith<$Res> get user;
   $OrderModelCopyWith<$Res> get order;
-  $ProductModelCopyWith<$Res> get product;
 }
 
 /// @nodoc
@@ -922,20 +1273,25 @@ class _$TransactionStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? user = freezed,
     Object? order = freezed,
-    Object? product = freezed,
+    Object? itesmOrder = freezed,
     Object? isLoading = freezed,
     Object? isOrderSuccess = freezed,
   }) {
     return _then(_value.copyWith(
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserModel,
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as OrderModel,
-      product: product == freezed
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as ProductModel,
+      itesmOrder: itesmOrder == freezed
+          ? _value.itesmOrder
+          : itesmOrder // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -948,16 +1304,16 @@ class _$TransactionStateCopyWithImpl<$Res>
   }
 
   @override
-  $OrderModelCopyWith<$Res> get order {
-    return $OrderModelCopyWith<$Res>(_value.order, (value) {
-      return _then(_value.copyWith(order: value));
+  $UserModelCopyWith<$Res> get user {
+    return $UserModelCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
     });
   }
 
   @override
-  $ProductModelCopyWith<$Res> get product {
-    return $ProductModelCopyWith<$Res>(_value.product, (value) {
-      return _then(_value.copyWith(product: value));
+  $OrderModelCopyWith<$Res> get order {
+    return $OrderModelCopyWith<$Res>(_value.order, (value) {
+      return _then(_value.copyWith(order: value));
     });
   }
 }
@@ -970,15 +1326,16 @@ abstract class _$$_TransactionStateCopyWith<$Res>
       __$$_TransactionStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {OrderModel order,
-      ProductModel product,
+      {UserModel user,
+      OrderModel order,
+      List<ProductModel> itesmOrder,
       bool isLoading,
       bool isOrderSuccess});
 
   @override
-  $OrderModelCopyWith<$Res> get order;
+  $UserModelCopyWith<$Res> get user;
   @override
-  $ProductModelCopyWith<$Res> get product;
+  $OrderModelCopyWith<$Res> get order;
 }
 
 /// @nodoc
@@ -994,20 +1351,25 @@ class __$$_TransactionStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? user = freezed,
     Object? order = freezed,
-    Object? product = freezed,
+    Object? itesmOrder = freezed,
     Object? isLoading = freezed,
     Object? isOrderSuccess = freezed,
   }) {
     return _then(_$_TransactionState(
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserModel,
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as OrderModel,
-      product: product == freezed
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as ProductModel,
+      itesmOrder: itesmOrder == freezed
+          ? _value.itesmOrder
+          : itesmOrder // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -1024,15 +1386,18 @@ class __$$_TransactionStateCopyWithImpl<$Res>
 
 class _$_TransactionState implements _TransactionState {
   _$_TransactionState(
-      {required this.order,
-      required this.product,
+      {required this.user,
+      required this.order,
+      required this.itesmOrder,
       required this.isLoading,
       required this.isOrderSuccess});
 
   @override
+  UserModel user;
+  @override
   OrderModel order;
   @override
-  ProductModel product;
+  List<ProductModel> itesmOrder;
   @override
   bool isLoading;
   @override
@@ -1040,7 +1405,7 @@ class _$_TransactionState implements _TransactionState {
 
   @override
   String toString() {
-    return 'TransactionState(order: $order, product: $product, isLoading: $isLoading, isOrderSuccess: $isOrderSuccess)';
+    return 'TransactionState(user: $user, order: $order, itesmOrder: $itesmOrder, isLoading: $isLoading, isOrderSuccess: $isOrderSuccess)';
   }
 
   @JsonKey(ignore: true)
@@ -1051,15 +1416,18 @@ class _$_TransactionState implements _TransactionState {
 
 abstract class _TransactionState implements TransactionState {
   factory _TransactionState(
-      {required OrderModel order,
-      required ProductModel product,
+      {required UserModel user,
+      required OrderModel order,
+      required List<ProductModel> itesmOrder,
       required bool isLoading,
       required bool isOrderSuccess}) = _$_TransactionState;
 
   @override
+  UserModel get user => throw _privateConstructorUsedError;
+  @override
   OrderModel get order => throw _privateConstructorUsedError;
   @override
-  ProductModel get product => throw _privateConstructorUsedError;
+  List<ProductModel> get itesmOrder => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override

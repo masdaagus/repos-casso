@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,8 +8,7 @@ import 'package:repos/domain/models/product_model.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 import 'package:repos/persentation/order/components/bottom_sheet/widgets/popup_add_notes.dart';
 import 'package:repos/persentation/order/components/core/widgets/no_iamage_widget.dart';
-
-import '../../../../application/order/order_bloc.dart';
+import '../../../../application/order/transaction/transaction_bloc.dart';
 import '../core/hero_dialog_route.dart';
 
 class CustomBottomSheet extends StatelessWidget {
@@ -17,14 +18,15 @@ class CustomBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<OrderBloc, OrderState>(
+    return BlocConsumer<TransactionBloc, TransactionState>(
       listener: (context, state) {
         if (state.isOrderSuccess) {
           context.router.popUntilRoot();
         }
       },
       builder: (context, state) {
-        List<ProductModel> itemsOrder = state.order.itemOrder;
+        List<ProductModel> itemsOrder =
+            state.itesmOrder.where((el) => el.productQty >= 1).toList();
 
         return Stack(
           children: [
@@ -50,8 +52,8 @@ class CustomBottomSheet extends StatelessWidget {
                                     builder: (_) {
                                       // return PopupAddNotes(product: product);
                                       return BlocProvider.value(
-                                        value:
-                                            BlocProvider.of<OrderBloc>(context),
+                                        value: BlocProvider.of<TransactionBloc>(
+                                            context),
                                         child: PopupAddNotes(product: product),
                                       );
                                     },
@@ -69,10 +71,10 @@ class CustomBottomSheet extends StatelessWidget {
                 ),
               ],
             ),
-            (state.order.itemOrder.isNotEmpty)
+            (itemsOrder.isNotEmpty)
                 ? _OrderButton(
                     onTap: () {
-                      context.read<OrderBloc>().add(const OrderEvent.order());
+                      log('order function here');
                     },
                   )
                 : siboh,
@@ -140,6 +142,7 @@ class ItemOrderTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
+    final _blocTrx = context.read<TransactionBloc>();
     return Container(
       margin: const EdgeInsets.symmetric(
         horizontal: spacing1,
@@ -221,9 +224,7 @@ class ItemOrderTile extends StatelessWidget {
                         children: [
                           _ButtonIcrAndDcr(
                             onTap: () {
-                              context
-                                  .read<OrderBloc>()
-                                  .add(OrderEvent.dcrmQty(product));
+                              _blocTrx.add(TransactionEvent.dcrmQty(product));
                             },
                           ),
                           sibow,
@@ -241,12 +242,11 @@ class ItemOrderTile extends StatelessWidget {
                           sibonanow,
                           sibonanow,
                           _ButtonIcrAndDcr(
-                              onTap: () {
-                                context
-                                    .read<OrderBloc>()
-                                    .add(OrderEvent.incrmQty(product));
-                              },
-                              isIncerement: true),
+                            onTap: () {
+                              _blocTrx.add(TransactionEvent.incrmQty(product));
+                            },
+                            isIncerement: true,
+                          ),
                         ],
                       ),
                     )
@@ -371,12 +371,12 @@ class _HeaderBottomSheet extends StatelessWidget {
           ),
         ],
       ),
-      child: BlocBuilder<OrderBloc, OrderState>(
+      child: BlocBuilder<TransactionBloc, TransactionState>(
         builder: (context, state) {
           double _total = 0;
           int _totalItems = 0;
           OrderModel order = state.order;
-          state.order.itemOrder.map(
+          state.itesmOrder.map(
             (e) {
               _total += (e.productPrice! * e.productQty);
               _totalItems += e.productQty;

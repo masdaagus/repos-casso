@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:repos/domain/models/order_model.dart';
 import 'package:repos/domain/models/user_model.dart';
 import 'package:repos/injection.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
@@ -29,14 +30,14 @@ class OrderPage extends StatelessWidget {
               ..add(OrderEvent.readTablesAndGetProducts(user));
           },
         ),
-        BlocProvider(create: (context) => TransactionBloc()),
+        BlocProvider(create: (context) => getIt<TransactionBloc>()),
       ],
       child: BlocListener<OrderBloc, OrderState>(
         listener: (context, state) {
           List<ProductModel> products = state.products;
-          context.read<TransactionBloc>().add(
-                TransactionEvent.itemsOrder(products),
-              );
+          final _trxBloc = context.read<TransactionBloc>();
+          _trxBloc.add(TransactionEvent.getUser(user));
+          _trxBloc.add(TransactionEvent.getProducts(products));
         },
         child: Scaffold(
           body: SafeArea(

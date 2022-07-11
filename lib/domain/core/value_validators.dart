@@ -27,15 +27,6 @@ Either<ValueFailure<String>, String> validateRestoFields(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validateRestoTable(String input) {
-  const String numRegex = r'^[0-9]+$';
-  if (RegExp(numRegex).hasMatch(input)) {
-    return right(input);
-  } else {
-    return left(ValueFailure.invalidRestoTable(failedValue: input));
-  }
-}
-
 Either<ValueFailure<String>, String> validateProductFieldsNotNull(
   String input,
 ) {
@@ -46,15 +37,18 @@ Either<ValueFailure<String>, String> validateProductFieldsNotNull(
   }
 }
 
-Either<ValueFailure<String>, String> validateProductPrice(
-  String input,
-) {
-  const String numRegex = r'^[+-]?(\d+([.,]\d*)?|[.,]\d+)([eE][+-]?\d+)?$';
-  double? isNegative = double.tryParse(input);
-
-  if (RegExp(numRegex).hasMatch(input) && isNegative! > 0) {
+Either<ValueFailure<double>, double> validateProductPrice(double input) {
+  if (input > 0) {
     return right(input);
   } else {
     return left(ValueFailure.invalidProductsPrice(failedValue: input));
+  }
+}
+
+Either<ValueFailure<int>, int> validateRestoTable(int input) {
+  if (input > 0) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidRestoTable(failedValue: input));
   }
 }

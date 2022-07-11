@@ -15,7 +15,7 @@ class SignUpState with _$SignUpState {
         emailAddress: EmailAddress(''),
         password: Password(''),
         restoName: RestoFields(''),
-        restoTable: RestoTable(''),
+        restoTable: RestoTable(0),
         isLoading: false,
         signUpFailureOrSuccess: none(),
       );

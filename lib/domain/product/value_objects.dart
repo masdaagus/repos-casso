@@ -17,26 +17,26 @@ class ProductFieldsNotNull extends ValueObject<String> {
   const ProductFieldsNotNull._(this.value);
 }
 
-class ProductFieldsPrices extends ValueObject<String> {
+class ProductFieldsPrices extends ValueObject<double> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<double>, double> value;
 
-  factory ProductFieldsPrices(String input) {
+  factory ProductFieldsPrices(double input) {
     return ProductFieldsPrices._(
-      validateProductPrice(input.trim()),
+      validateProductPrice(input),
     );
   }
 
   const ProductFieldsPrices._(this.value);
 }
 
-class ProductFieldsStock extends ValueObject<String> {
+class ProductFieldsStock extends ValueObject<int> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<int>, int> value;
 
-  factory ProductFieldsStock(String input) {
+  factory ProductFieldsStock(int input) {
     return ProductFieldsStock._(
-      validateRestoTable(input.trim()),
+      validateRestoTable(input),
     );
   }
 

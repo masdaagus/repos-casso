@@ -64,8 +64,10 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData, child: const DashboardPage());
     },
     MenuRoute.name: (routeData) {
+      final args = routeData.argsAs<MenuRouteArgs>();
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const MenuPage());
+          routeData: routeData,
+          child: MenuPage(key: args.key, products: args.products));
     },
     AddProductRoute.name: (routeData) {
       final args = routeData.argsAs<AddProductRouteArgs>();
@@ -222,10 +224,26 @@ class DashboardRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [MenuPage]
-class MenuRoute extends PageRouteInfo<void> {
-  const MenuRoute() : super(MenuRoute.name, path: '/menu-page');
+class MenuRoute extends PageRouteInfo<MenuRouteArgs> {
+  MenuRoute({Key? key, required List<ProductModel> products})
+      : super(MenuRoute.name,
+            path: '/menu-page',
+            args: MenuRouteArgs(key: key, products: products));
 
   static const String name = 'MenuRoute';
+}
+
+class MenuRouteArgs {
+  const MenuRouteArgs({this.key, required this.products});
+
+  final Key? key;
+
+  final List<ProductModel> products;
+
+  @override
+  String toString() {
+    return 'MenuRouteArgs{key: $key, products: $products}';
+  }
 }
 
 /// generated route for

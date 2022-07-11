@@ -96,7 +96,9 @@ class AddProductBody extends StatelessWidget {
                   isNum: true,
                   initialValue: product?.productPrice!.toStringAsFixed(0) ?? '',
                   onChanged: (val) {
-                    _bloc.add(AddProductEvent.productPriceChanged(val));
+                    final _price = double.tryParse(val);
+                    _bloc.add(
+                        AddProductEvent.productPriceChanged(_price ?? 0.0));
                   },
                   validator: (val) {
                     if (val!.isEmpty) {
@@ -117,7 +119,8 @@ class AddProductBody extends StatelessWidget {
                   isNum: true,
                   initialValue: product?.productStock.toString() ?? '100',
                   onChanged: (val) {
-                    _bloc.add(AddProductEvent.productStockChanged(val));
+                    final _stock = int.tryParse(val);
+                    _bloc.add(AddProductEvent.productStockChanged(_stock ?? 0));
                   },
                   validator: (val) {
                     return state.stock.value.fold(

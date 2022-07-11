@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
-import 'package:repos/application/order/order_bloc.dart';
 import 'package:repos/domain/models/product_model.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 import 'dart:developer';
+
+import '../../../../../application/order/transaction/transaction_bloc.dart';
 
 class PopupAddNotes extends StatelessWidget {
   const PopupAddNotes({Key? key, required this.product}) : super(key: key);
@@ -29,13 +29,12 @@ class PopupAddNotes extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: Container(
-                // height: 300,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: lightColor.withOpacity(.6),
                   borderRadius: BorderRadius.circular(spacing2),
                 ),
-                child: BlocBuilder<OrderBloc, OrderState>(
+                child: BlocBuilder<TransactionBloc, TransactionState>(
                   builder: (context, state) {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
@@ -80,8 +79,13 @@ class PopupAddNotes extends StatelessWidget {
                           onPressed: () {
                             FocusManager.instance.primaryFocus?.unfocus();
 
-                            context.read<OrderBloc>().add(OrderEvent.itemNotes(
-                                product, _controller.text));
+                            context.read<TransactionBloc>().add(
+                                  TransactionEvent.itemNotes(
+                                    product,
+                                    _controller.text,
+                                  ),
+                                );
+                            Navigator.pop(context);
                           },
                           child: const Text(
                             "SAVE",

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:repos/domain/models/product_model.dart';
 import 'package:repos/domain/models/table_model.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 import '../../../application/order/order_bloc.dart';
+import '../../../application/order/transaction/transaction_bloc.dart';
 import '../components/core/hero_dialog_route.dart';
 import 'widgets/card_table.dart';
 import 'widgets/popup_input.dart';
@@ -17,6 +19,7 @@ class DineInTab extends StatelessWidget {
       child: BlocBuilder<OrderBloc, OrderState>(
         builder: (context, state) {
           List<TableModel> tables = state.tables;
+          List<ProductModel> products = state.products;
           return GridView.count(
             shrinkWrap: true,
             crossAxisSpacing: spacing1,
@@ -33,9 +36,10 @@ class DineInTab extends StatelessWidget {
                         dur: 0,
                         builder: (_) {
                           return BlocProvider.value(
-                            value: BlocProvider.of<OrderBloc>(context),
+                            value: BlocProvider.of<TransactionBloc>(context),
                             child: PopupInputGuessName(
                               table: table,
+                              products: products,
                             ),
                           );
                         },

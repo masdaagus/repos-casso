@@ -30,5 +30,5 @@ Map<String, dynamic> _$$_OrdertModelToJson(_$_OrdertModel instance) =>
       'orderTable': instance.orderTable,
       'orderNumber': instance.orderNumber,
       'isPaid': instance.isPaid,
-      'itemOrder': instance.itemOrder.map((e) => e.toJson()).toList(),
+      'itemOrder': instance.itemOrder,
     };

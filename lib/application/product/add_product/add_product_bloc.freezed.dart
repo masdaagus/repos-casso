@@ -20,8 +20,8 @@ mixin _$AddProductEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -35,8 +35,8 @@ mixin _$AddProductEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -48,8 +48,8 @@ mixin _$AddProductEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -190,8 +190,8 @@ class _$_ProductImageChanged implements _ProductImageChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -208,8 +208,8 @@ class _$_ProductImageChanged implements _ProductImageChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -224,8 +224,8 @@ class _$_ProductImageChanged implements _ProductImageChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -375,8 +375,8 @@ class _$_ProductNameChanged implements _ProductNameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -393,8 +393,8 @@ class _$_ProductNameChanged implements _ProductNameChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -409,8 +409,8 @@ class _$_ProductNameChanged implements _ProductNameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -496,7 +496,7 @@ abstract class _$$_ProductPriceChangedCopyWith<$Res> {
   factory _$$_ProductPriceChangedCopyWith(_$_ProductPriceChanged value,
           $Res Function(_$_ProductPriceChanged) then) =
       __$$_ProductPriceChangedCopyWithImpl<$Res>;
-  $Res call({String productPrice});
+  $Res call({double productPrice});
 }
 
 /// @nodoc
@@ -518,7 +518,7 @@ class __$$_ProductPriceChangedCopyWithImpl<$Res>
       productPrice == freezed
           ? _value.productPrice
           : productPrice // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
     ));
   }
 }
@@ -529,7 +529,7 @@ class _$_ProductPriceChanged implements _ProductPriceChanged {
   const _$_ProductPriceChanged(this.productPrice);
 
   @override
-  final String productPrice;
+  final double productPrice;
 
   @override
   String toString() {
@@ -560,8 +560,8 @@ class _$_ProductPriceChanged implements _ProductPriceChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -578,8 +578,8 @@ class _$_ProductPriceChanged implements _ProductPriceChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -594,8 +594,8 @@ class _$_ProductPriceChanged implements _ProductPriceChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -667,10 +667,10 @@ class _$_ProductPriceChanged implements _ProductPriceChanged {
 }
 
 abstract class _ProductPriceChanged implements AddProductEvent {
-  const factory _ProductPriceChanged(final String productPrice) =
+  const factory _ProductPriceChanged(final double productPrice) =
       _$_ProductPriceChanged;
 
-  String get productPrice => throw _privateConstructorUsedError;
+  double get productPrice => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_ProductPriceChangedCopyWith<_$_ProductPriceChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -681,7 +681,7 @@ abstract class _$$_ProductStockChangedCopyWith<$Res> {
   factory _$$_ProductStockChangedCopyWith(_$_ProductStockChanged value,
           $Res Function(_$_ProductStockChanged) then) =
       __$$_ProductStockChangedCopyWithImpl<$Res>;
-  $Res call({String productStock});
+  $Res call({int productStock});
 }
 
 /// @nodoc
@@ -703,7 +703,7 @@ class __$$_ProductStockChangedCopyWithImpl<$Res>
       productStock == freezed
           ? _value.productStock
           : productStock // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -714,7 +714,7 @@ class _$_ProductStockChanged implements _ProductStockChanged {
   const _$_ProductStockChanged(this.productStock);
 
   @override
-  final String productStock;
+  final int productStock;
 
   @override
   String toString() {
@@ -745,8 +745,8 @@ class _$_ProductStockChanged implements _ProductStockChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -763,8 +763,8 @@ class _$_ProductStockChanged implements _ProductStockChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -779,8 +779,8 @@ class _$_ProductStockChanged implements _ProductStockChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -852,10 +852,10 @@ class _$_ProductStockChanged implements _ProductStockChanged {
 }
 
 abstract class _ProductStockChanged implements AddProductEvent {
-  const factory _ProductStockChanged(final String productStock) =
+  const factory _ProductStockChanged(final int productStock) =
       _$_ProductStockChanged;
 
-  String get productStock => throw _privateConstructorUsedError;
+  int get productStock => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_ProductStockChangedCopyWith<_$_ProductStockChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -932,8 +932,8 @@ class _$_ProductCategorieChanged implements _ProductCategorieChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -950,8 +950,8 @@ class _$_ProductCategorieChanged implements _ProductCategorieChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -966,8 +966,8 @@ class _$_ProductCategorieChanged implements _ProductCategorieChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1120,8 +1120,8 @@ class _$_ProductDescriptionChanged implements _ProductDescriptionChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -1138,8 +1138,8 @@ class _$_ProductDescriptionChanged implements _ProductDescriptionChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1154,8 +1154,8 @@ class _$_ProductDescriptionChanged implements _ProductDescriptionChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1312,8 +1312,8 @@ class _$_AddProduct implements _AddProduct {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -1330,8 +1330,8 @@ class _$_AddProduct implements _AddProduct {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1346,8 +1346,8 @@ class _$_AddProduct implements _AddProduct {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1521,8 +1521,8 @@ class _$_UpdateProduct implements _UpdateProduct {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -1539,8 +1539,8 @@ class _$_UpdateProduct implements _UpdateProduct {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1555,8 +1555,8 @@ class _$_UpdateProduct implements _UpdateProduct {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1715,8 +1715,8 @@ class _$_DeleteProduct implements _DeleteProduct {
   TResult when<TResult extends Object?>({
     required TResult Function(File? productImage) productImageChanged,
     required TResult Function(String productName) productNameChanged,
-    required TResult Function(String productPrice) productPriceChanged,
-    required TResult Function(String productStock) productStockChanged,
+    required TResult Function(double productPrice) productPriceChanged,
+    required TResult Function(int productStock) productStockChanged,
     required TResult Function(String productCategorie) productCategorieChanged,
     required TResult Function(String productDescription)
         productDescriptionChanged,
@@ -1733,8 +1733,8 @@ class _$_DeleteProduct implements _DeleteProduct {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,
@@ -1749,8 +1749,8 @@ class _$_DeleteProduct implements _DeleteProduct {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(File? productImage)? productImageChanged,
     TResult Function(String productName)? productNameChanged,
-    TResult Function(String productPrice)? productPriceChanged,
-    TResult Function(String productStock)? productStockChanged,
+    TResult Function(double productPrice)? productPriceChanged,
+    TResult Function(int productStock)? productStockChanged,
     TResult Function(String productCategorie)? productCategorieChanged,
     TResult Function(String productDescription)? productDescriptionChanged,
     TResult Function(UserModel user)? addProduct,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repos/persentation/core/constant/constant.dart';
 
 import '../../../../../application/order/order_bloc.dart';
+import '../../../../../application/order/transaction/transaction_bloc.dart';
 import '../../../../../domain/models/order_model.dart';
 
 class ButtonChart extends StatelessWidget {
@@ -54,12 +55,13 @@ class ButtonChart extends StatelessWidget {
               ),
             ],
           ),
-          child: BlocBuilder<OrderBloc, OrderState>(
+          child: BlocBuilder<TransactionBloc, TransactionState>(
             builder: (context, state) {
               double _total = 0;
               int _totalItems = 0;
               OrderModel order = state.order;
-              state.order.itemOrder.map(
+              final itemsOrder = state.itesmOrder;
+              itemsOrder.map(
                 (e) {
                   _total += (e.productPrice! * e.productQty);
                   _totalItems += e.productQty;

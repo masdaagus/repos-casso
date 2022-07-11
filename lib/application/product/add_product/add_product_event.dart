@@ -6,9 +6,9 @@ class AddProductEvent with _$AddProductEvent {
       _ProductImageChanged;
   const factory AddProductEvent.productNameChanged(String productName) =
       _ProductNameChanged;
-  const factory AddProductEvent.productPriceChanged(String productPrice) =
+  const factory AddProductEvent.productPriceChanged(double productPrice) =
       _ProductPriceChanged;
-  const factory AddProductEvent.productStockChanged(String productStock) =
+  const factory AddProductEvent.productStockChanged(int productStock) =
       _ProductStockChanged;
   const factory AddProductEvent.productCategorieChanged(
       String productCategorie) = _ProductCategorieChanged;
